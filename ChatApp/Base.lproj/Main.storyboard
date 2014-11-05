@@ -18,11 +18,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="3ab-pr-f9T" kind="show" id="T3j-yB-Rio"/>
+                        <segue destination="3ab-pr-f9T" kind="show" identifier="FromLogIn" id="T3j-yB-Rio"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="307"/>
         </scene>
         <!--Contacts View Controller-->
         <scene sceneID="U5v-LU-7zT">
@@ -36,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DBP-5A-riS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DBP-5A-riS">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -55,6 +56,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DBP-5A-riS" firstAttribute="leading" secondItem="qRT-7h-qHv" secondAttribute="leading" id="CkE-J0-awU"/>
+                            <constraint firstAttribute="trailing" secondItem="DBP-5A-riS" secondAttribute="trailing" id="Nth-SE-jR5"/>
+                            <constraint firstItem="cpJ-me-O7d" firstAttribute="top" secondItem="DBP-5A-riS" secondAttribute="bottom" id="m35-5Y-WG2"/>
+                            <constraint firstItem="DBP-5A-riS" firstAttribute="top" secondItem="qRT-7h-qHv" secondAttribute="top" id="orZ-pY-BPO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hW5-mX-7S3"/>
                 </viewController>

@@ -39,12 +39,12 @@
         else
         {
             self.contacts = objects; //[objects sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //I think I'll need to make it reference the name specifically?
-            [self createDictionaryWithKeys];
-            [self createArraysForDictionaryKeys];
+  //          [self createDictionaryWithKeys];
+  //          [self createArraysForDictionaryKeys];
         }
     }];
 }
-
+/*
 -(void)createDictionaryWithKeys
 {
     for (FacebookFriend *contact in self.contacts)
@@ -88,13 +88,15 @@
 {
     return [self.contactSectionTitles objectAtIndex:section];
 }
-
+*/
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSString *sectionTitle = [self.contactSectionTitles objectAtIndex:section];
-    NSArray *sectionContacts = [self.contactsSeparated objectForKey:sectionTitle];
-    return [sectionContacts count];
+//    NSString *sectionTitle = [self.contactSectionTitles objectAtIndex:section];
+//    NSArray *sectionContacts = [self.contactsSeparated objectForKey:sectionTitle];
+//    return [sectionContacts count];
+
+    return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -102,11 +104,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID" forIndexPath:indexPath];
 
     // Configure the cell...
-    NSString *sectionTitle = [self.contactSectionTitles objectAtIndex:indexPath.section];
-    NSArray *sectionContacts = [self.contactsSeparated objectForKey:sectionTitle];
-    FacebookFriend *contact = [sectionContacts objectAtIndex:indexPath.row];
-    cell.textLabel.text = contact.name;
-    
+//    NSString *sectionTitle = [self.contactSectionTitles objectAtIndex:indexPath.section];
+//    NSArray *sectionContacts = [self.contactsSeparated objectForKey:sectionTitle];
+//    FacebookFriend *contact = [sectionContacts objectAtIndex:indexPath.row];
+//    cell.textLabel.text = contact.name;
+
     return cell;
 }
 
