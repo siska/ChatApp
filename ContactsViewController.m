@@ -8,6 +8,7 @@
 
 #import "ContactsViewController.h"
 #import <Parse/Parse.h>
+#import "MessageViewController.h"
 
 @interface ContactsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -123,10 +124,11 @@
     NSLog(@"self.contactsSeparated: %@", self.contactsSeparated);
 }
 
--(void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([identifier  isEqual:@"FullConversationSegue"]) {
-        //send over the selected user
+    if ([segue.identifier isEqual:@"FullConversationSegue"]) {
+        ContactsViewController *viewController = [segue destinationViewController];
+        viewController.selectedUser = self.selectedUser;
     }
 }
 

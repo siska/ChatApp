@@ -31,6 +31,7 @@
 		1241BA471A09AC1C003BD083 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1241BA461A09AC1C003BD083 /* libz.dylib */; };
 		1241BA4D1A09B8FE003BD083 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA4C1A09B8FE003BD083 /* ContactsViewController.m */; };
 		1241BA541A0A7D3A003BD083 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA531A0A7D3A003BD083 /* Contact.m */; };
+		1241BA571A0AD109003BD083 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA561A0AD109003BD083 /* MessageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		1241BA4C1A09B8FE003BD083 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsViewController.m; path = ../ContactsViewController.m; sourceTree = "<group>"; };
 		1241BA521A0A7D3A003BD083 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contact.h; path = ../Contact.h; sourceTree = "<group>"; };
 		1241BA531A0A7D3A003BD083 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = ../Contact.m; sourceTree = "<group>"; };
+		1241BA551A0AD109003BD083 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		1241BA561A0AD109003BD083 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				1241BA0E1A09AAC6003BD083 /* RootViewController.m */,
 				1241BA4B1A09B8FE003BD083 /* ContactsViewController.h */,
 				1241BA4C1A09B8FE003BD083 /* ContactsViewController.m */,
+				1241BA551A0AD109003BD083 /* MessageViewController.h */,
+				1241BA561A0AD109003BD083 /* MessageViewController.m */,
 				1241BA131A09AAC6003BD083 /* Images.xcassets */,
 				1241BA151A09AAC6003BD083 /* LaunchScreen.xib */,
 				1241BA0A1A09AAC6003BD083 /* ChatApp.xcdatamodeld */,
@@ -302,6 +307,7 @@
 				1241BA0F1A09AAC6003BD083 /* RootViewController.m in Sources */,
 				1241BA541A0A7D3A003BD083 /* Contact.m in Sources */,
 				1241BA061A09AAC6003BD083 /* main.m in Sources */,
+				1241BA571A0AD109003BD083 /* MessageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
