@@ -16,6 +16,7 @@
 @property NSArray *contactSectionTitles;
 @property NSArray *allUsers;
 @property PFUser *currentUserWithRelations;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -27,13 +28,13 @@
     self.contactsSeparated = [[NSMutableDictionary alloc] init];
 
     [self queryAllUsersFromParse];
-    [self queryForContacts];
 }
 
 -(void)queryAllUsersFromParse
 {
     PFQuery *queryForUsers = [PFQuery queryWithClassName:@"_User"];
-    [queryForUsers findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    [queryForUsers findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    {
         if (error) {
             NSLog(@"Error: %@", error.userInfo);
             self.allUsers = [NSArray array];
@@ -41,8 +42,9 @@
         else
         {
             self.allUsers = objects;
-            [self saveAllContactsForUserToParse];
+            NSLog(@"1. Should see all users: %@", self.allUsers);
         }
+        [self saveAllContactsForUserToParse];
     }];
 }
 
@@ -51,19 +53,27 @@
     PFRelation *relationship = [[PFUser currentUser] relationForKey:@"contacts"];
 
     for (PFObject *contact in self.allUsers)
+    {
         [relationship addObject:contact];
+    }
 
-    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error) {
+    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    {
+        if (error)
+        {
             NSLog(@"Error: %@", [error userInfo]);
         }
     }];
     self.currentUserWithRelations = [PFUser currentUser];
+    NSLog(@"2. should see the current user with the relationship information: %@", self.currentUserWithRelations);
+    [self queryForContacts];
 }
 
 -(void)queryForContacts
-{
+{   NSLog(@"queryForContacts called");
     PFRelation *relation = [self.currentUserWithRelations relationForKey:@"contacts"];
+    NSLog(@"3.1 see what the PFRelation returns: %@", relation);
+
     PFQuery *query = [relation query];
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) // results contains all current users relations
     {
@@ -74,11 +84,10 @@
         else
         {
             self.contacts = results; //[objects sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //say name specfcly?
+            NSLog(@"3.2 Should see all the contacts for the current user: %@", self.contacts);
         }
-
+        [self createDictionaryWithKeys];
     }];
-    [self createDictionaryWithKeys];
-    [self createArraysForDictionaryKeys];
 }
 
 -(void)createDictionaryWithKeys //creates the keys in a dictionary with empty arrays - those will be set later
@@ -96,6 +105,7 @@
         }
     }
     self.contactSectionTitles = [[self.contactsSeparated allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //this should order the keys for us
+    [self createArraysForDictionaryKeys];
 }
 
 -(void)createArraysForDictionaryKeys
@@ -111,6 +121,7 @@
 
         [self.contactsSeparated setObject:tempArrayForKeys forKey:firstLetter];
     }
+    [self.tableView reloadData];
 }
 
 #pragma mark TableView DataSource
