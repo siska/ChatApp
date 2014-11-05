@@ -47,6 +47,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oda-o0-rv1" id="azz-RH-XZt">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="2Uz-Xd-ZKq" kind="presentation" identifier="FullConversationSegue" id="XL8-0K-hH7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -78,6 +81,24 @@
                 <exit id="mr3-fn-xnq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1845" y="307"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UU1-zN-nbX">
+            <objects>
+                <viewController id="2Uz-Xd-ZKq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KhC-NT-yVe"/>
+                        <viewControllerLayoutGuide type="bottom" id="yJX-xP-sRl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QES-29-vmW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tUi-Mq-yxP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1845" y="1046"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rfD-3O-Y3c">

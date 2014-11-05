@@ -17,6 +17,7 @@
 @property NSArray *allUsers;
 @property PFUser *currentUserWithRelations;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property PFObject *selectedUser;
 
 @end
 
@@ -122,11 +123,20 @@
     NSLog(@"self.contactsSeparated: %@", self.contactsSeparated);
 }
 
+-(void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier  isEqual:@"FullConversationSegue"]) {
+        //send over the selected user
+    }
+}
+
 #pragma mark TableView DataSource
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    PFObject *selectedUser = [self.contacts objectAtIndex:indexPath.row];
+    self.selectedUser = selectedUser;
+    [self performSegueWithIdentifier:@"FullConversationSegue" sender:tableView];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
