@@ -19,10 +19,12 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
 
-    if (![PFUser currentUser]) { // No user logged in
+    if (![PFUser currentUser])
+    { // No user logged in
         // Create the log in view controller
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
@@ -36,12 +38,14 @@
 
         // Present the log in view controller
         [self presentViewController:logInViewController animated:YES completion:NULL];
-    }else{
+    }
+    else
+    {
         [self performSegueWithIdentifier:@"FromLogIn" sender:self];
     }
 }
 
-- (IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
+-(IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
 {
     [PFUser logOut];
 }

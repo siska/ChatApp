@@ -14,6 +14,7 @@
 @property NSArray *contacts;
 @property NSMutableDictionary *contactsSeparated;
 @property NSArray *contactSectionTitles;
+@property NSArray *allUsers;
 
 @end
 
@@ -24,7 +25,38 @@
     self.contacts = [[NSArray alloc] init];
     self.contactsSeparated = [[NSMutableDictionary alloc] init];
 
+    [self queryAllUsersFromParse];
     [self queryForContacts];
+}
+
+-(void)queryAllUsersFromParse
+{
+    PFQuery *queryForUsers = [PFQuery queryWithClassName:@"_User"];
+    [queryForUsers findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error.userInfo);
+            self.allUsers = [NSArray array];
+        }
+        else
+        {
+            self.allUsers = objects;
+            [self saveAllContactsForUserToParse];
+        }
+    }];
+}
+
+-(void)saveAllContactsForUserToParse
+{
+    PFRelation *relationship = [[PFUser currentUser] relationForKey:@"contacts"];
+
+    for (PFObject *contact in self.allUsers)
+        [relationship addObject:contact];
+
+    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", [error userInfo]);
+        }
+    }];
 }
 
 -(void)queryForContacts

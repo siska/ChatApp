@@ -30,6 +30,7 @@
 		1241BA451A09AC04003BD083 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1241BA3A1A09AC04003BD083 /* SystemConfiguration.framework */; };
 		1241BA471A09AC1C003BD083 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1241BA461A09AC1C003BD083 /* libz.dylib */; };
 		1241BA4D1A09B8FE003BD083 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA4C1A09B8FE003BD083 /* ContactsViewController.m */; };
+		1241BA541A0A7D3A003BD083 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA531A0A7D3A003BD083 /* Contact.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		1241BA461A09AC1C003BD083 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1241BA4B1A09B8FE003BD083 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsViewController.h; path = ../ContactsViewController.h; sourceTree = "<group>"; };
 		1241BA4C1A09B8FE003BD083 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsViewController.m; path = ../ContactsViewController.m; sourceTree = "<group>"; };
+		1241BA521A0A7D3A003BD083 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contact.h; path = ../Contact.h; sourceTree = "<group>"; };
+		1241BA531A0A7D3A003BD083 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = ../Contact.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,7 @@
 				1241BA131A09AAC6003BD083 /* Images.xcassets */,
 				1241BA151A09AAC6003BD083 /* LaunchScreen.xib */,
 				1241BA0A1A09AAC6003BD083 /* ChatApp.xcdatamodeld */,
+				1241BA511A0A7CCB003BD083 /* Data Model */,
 				1241BA031A09AAC6003BD083 /* Supporting Files */,
 			);
 			path = ChatApp;
@@ -181,6 +185,15 @@
 				1241BA211A09AAC6003BD083 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1241BA511A0A7CCB003BD083 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				1241BA521A0A7D3A003BD083 /* Contact.h */,
+				1241BA531A0A7D3A003BD083 /* Contact.m */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +300,7 @@
 				1241BA091A09AAC6003BD083 /* AppDelegate.m in Sources */,
 				1241BA4D1A09B8FE003BD083 /* ContactsViewController.m in Sources */,
 				1241BA0F1A09AAC6003BD083 /* RootViewController.m in Sources */,
+				1241BA541A0A7D3A003BD083 /* Contact.m in Sources */,
 				1241BA061A09AAC6003BD083 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
