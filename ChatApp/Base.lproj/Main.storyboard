@@ -63,11 +63,18 @@
                             <constraint firstItem="DBP-5A-riS" firstAttribute="top" secondItem="qRT-7h-qHv" secondAttribute="top" id="orZ-pY-BPO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hW5-mX-7S3"/>
+                    <navigationItem key="navigationItem" id="hW5-mX-7S3">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="rsR-z9-CIP">
+                            <connections>
+                                <segue destination="mr3-fn-xnq" kind="unwind" unwindAction="unwindFromLogOut:" id="rJA-cT-5Xj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GxG-mw-0LM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mr3-fn-xnq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1909" y="307"/>
+            <point key="canvasLocation" x="1845" y="307"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rfD-3O-Y3c">
@@ -85,7 +92,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGj-oZ-Lfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="307"/>
+            <point key="canvasLocation" x="1059" y="307"/>
         </scene>
     </scenes>
 </document>

@@ -41,6 +41,11 @@
     }
 }
 
+- (IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
+{
+    [PFUser logOut];
+}
+
 #pragma mark - Delegate Methods
 
 // Sent to the delegate to determine whether the log in request should be submitted to the server.
