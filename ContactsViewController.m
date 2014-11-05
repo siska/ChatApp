@@ -15,6 +15,7 @@
 @property NSMutableDictionary *contactsSeparated;
 @property NSArray *contactSectionTitles;
 @property NSArray *allUsers;
+@property PFUser *currentUserWithRelations;
 
 @end
 
@@ -57,31 +58,34 @@
             NSLog(@"Error: %@", [error userInfo]);
         }
     }];
+    self.currentUserWithRelations = [PFUser currentUser];
 }
 
 -(void)queryForContacts
 {
-    PFQuery *queryForContacts = [PFQuery queryWithClassName:@"FacebookFriend"];
-    [queryForContacts whereKey:@"friendOf" equalTo:[PFUser currentUser]];
-    [queryForContacts findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@", error.userInfo);
-            self.contacts = [NSArray array];
+    PFRelation *relation = [self.currentUserWithRelations relationForKey:@"contacts"];
+    PFQuery *query = [relation query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) // results contains all current users relations
+    {
+        if (error)
+        {
+            NSLog(@"Error in queryForContacts: %@", error.userInfo);
         }
         else
         {
-            self.contacts = objects; //[objects sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //I think I'll need to make it reference the name specifically?
-  //          [self createDictionaryWithKeys];
-  //          [self createArraysForDictionaryKeys];
+            self.contacts = results; //[objects sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //say name specfcly?
         }
+
     }];
+    [self createDictionaryWithKeys];
+    [self createArraysForDictionaryKeys];
 }
-/*
--(void)createDictionaryWithKeys
+
+-(void)createDictionaryWithKeys //creates the keys in a dictionary with empty arrays - those will be set later
 {
-    for (FacebookFriend *contact in self.contacts)
+    for (PFUser *contact in self.contacts)
     {
-        NSString *firstLetter = [contact.name substringToIndex:0];
+        NSString *firstLetter = [contact.username substringToIndex:0];
         firstLetter =[firstLetter uppercaseString];
 
         NSMutableArray *emptyArray = [[NSMutableArray alloc] init];
@@ -96,9 +100,9 @@
 
 -(void)createArraysForDictionaryKeys
 {
-    for (FacebookFriend *contact in self.contacts)
+    for (PFUser *contact in self.contacts)
     {
-        NSString *firstLetter = [contact.name substringToIndex:0];
+        NSString *firstLetter = [contact.username substringToIndex:0];
         firstLetter =[firstLetter uppercaseString];
 
         NSMutableArray *tempArrayForKeys = [NSMutableArray array];
@@ -120,15 +124,13 @@
 {
     return [self.contactSectionTitles objectAtIndex:section];
 }
-*/
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-//    NSString *sectionTitle = [self.contactSectionTitles objectAtIndex:section];
-//    NSArray *sectionContacts = [self.contactsSeparated objectForKey:sectionTitle];
-//    return [sectionContacts count];
-
-    return 0;
+    NSString *sectionTitle = [self.contactSectionTitles objectAtIndex:section];
+    NSArray *sectionContacts = [self.contactsSeparated objectForKey:sectionTitle];
+    return [sectionContacts count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -136,10 +138,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID" forIndexPath:indexPath];
 
     // Configure the cell...
-//    NSString *sectionTitle = [self.contactSectionTitles objectAtIndex:indexPath.section];
-//    NSArray *sectionContacts = [self.contactsSeparated objectForKey:sectionTitle];
-//    FacebookFriend *contact = [sectionContacts objectAtIndex:indexPath.row];
-//    cell.textLabel.text = contact.name;
+    NSString *sectionTitle = [self.contactSectionTitles objectAtIndex:indexPath.section];
+    NSArray *sectionContacts = [self.contactsSeparated objectForKey:sectionTitle];
+    PFUser *contact = [sectionContacts objectAtIndex:indexPath.row];
+    cell.textLabel.text = contact.username;
 
     return cell;
 }
