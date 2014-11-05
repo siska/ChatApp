@@ -42,7 +42,6 @@
         else
         {
             self.allUsers = objects;
-            NSLog(@"1. Should see all users: %@", self.allUsers);
         }
         [self saveAllContactsForUserToParse];
     }];
@@ -65,14 +64,12 @@
         }
     }];
     self.currentUserWithRelations = [PFUser currentUser];
-    NSLog(@"2. should see the current user with the relationship information: %@", self.currentUserWithRelations);
     [self queryForContacts];
 }
 
 -(void)queryForContacts
-{   NSLog(@"queryForContacts called");
+{
     PFRelation *relation = [self.currentUserWithRelations relationForKey:@"contacts"];
-    NSLog(@"3.1 see what the PFRelation returns: %@", relation);
 
     PFQuery *query = [relation query];
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) // results contains all current users relations
@@ -84,7 +81,6 @@
         else
         {
             self.contacts = results; //[objects sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //say name specfcly?
-            NSLog(@"3.2 Should see all the contacts for the current user: %@", self.contacts);
         }
         [self createDictionaryWithKeys];
     }];
@@ -122,9 +118,16 @@
         [self.contactsSeparated setObject:tempArrayForKeys forKey:firstLetter];
     }
     [self.tableView reloadData];
+    NSLog(@"self.contacts: %@", self.contacts);
+    NSLog(@"self.contactsSeparated: %@", self.contactsSeparated);
 }
 
 #pragma mark TableView DataSource
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
