@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ContactsViewController.h
 //  ChatApp
 //
 //  Created by S on 11/4/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ContactsViewController : UIViewController
 
 @end
-
