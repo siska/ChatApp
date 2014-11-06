@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "Message.h"
 
 @interface MessageViewController : UIViewController
-@property PFObject *selectedUser;
+@property PFUser *selectedUser;
 
 @end

@@ -32,6 +32,7 @@
 		1241BA4D1A09B8FE003BD083 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA4C1A09B8FE003BD083 /* ContactsViewController.m */; };
 		1241BA541A0A7D3A003BD083 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA531A0A7D3A003BD083 /* Contact.m */; };
 		1241BA571A0AD109003BD083 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA561A0AD109003BD083 /* MessageViewController.m */; };
+		1241BA5A1A0BDC7D003BD083 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA591A0BDC7D003BD083 /* Message.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		1241BA531A0A7D3A003BD083 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = ../Contact.m; sourceTree = "<group>"; };
 		1241BA551A0AD109003BD083 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		1241BA561A0AD109003BD083 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		1241BA581A0BDC7D003BD083 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		1241BA591A0BDC7D003BD083 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 			children = (
 				1241BA521A0A7D3A003BD083 /* Contact.h */,
 				1241BA531A0A7D3A003BD083 /* Contact.m */,
+				1241BA581A0BDC7D003BD083 /* Message.h */,
+				1241BA591A0BDC7D003BD083 /* Message.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1241BA0C1A09AAC6003BD083 /* ChatApp.xcdatamodeld in Sources */,
+				1241BA5A1A0BDC7D003BD083 /* Message.m in Sources */,
 				1241BA091A09AAC6003BD083 /* AppDelegate.m in Sources */,
 				1241BA4D1A09B8FE003BD083 /* ContactsViewController.m in Sources */,
 				1241BA0F1A09AAC6003BD083 /* RootViewController.m in Sources */,
