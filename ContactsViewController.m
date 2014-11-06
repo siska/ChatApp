@@ -127,7 +127,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqual:@"FullConversationSegue"]) {
-        ContactsViewController *viewController = [segue destinationViewController];
+        MessageViewController *viewController = [segue destinationViewController];
         viewController.selectedUser = self.selectedUser;
     }
 }

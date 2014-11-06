@@ -9,6 +9,7 @@
 #import "MessageViewController.h"
 
 @interface MessageViewController ()
+@property (strong, nonatomic) IBOutlet UIView *messageView;
 
 @end
 
