@@ -138,6 +138,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qje-sp-c6p"/>
                     <connections>
+                        <outlet property="messageTextField" destination="gDP-3g-P9v" id="y7y-d4-G3a"/>
                         <outlet property="messageView" destination="02g-i4-BVd" id="6Cw-0W-Lfe"/>
                     </connections>
                 </viewController>

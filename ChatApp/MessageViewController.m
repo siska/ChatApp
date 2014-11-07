@@ -9,7 +9,8 @@
 #import "MessageViewController.h"
 
 @interface MessageViewController () <UITextFieldDelegate>
-@property (strong, nonatomic) IBOutlet UIView *messageView;
+@property (strong, nonatomic) IBOutlet UIView *messageView; //is this necessary?
+@property (strong, nonatomic) IBOutlet UITextField *messageTextField;
 
 @end
 
@@ -29,7 +30,9 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    self.messageTextField.text = @"";
     [self addMessageToParse:textField];
+    [textField resignFirstResponder];
     return YES;
 }
 
