@@ -18,7 +18,7 @@
 @property NSArray *allUsers;
 @property PFUser *currentUserWithRelations;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property PFObject *selectedUser;
+@property PFUser *selectedUser;
 
 @end
 
@@ -134,9 +134,11 @@
 
 #pragma mark TableView DataSource
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PFObject *selectedUser = [self.contacts objectAtIndex:indexPath.row];
+    NSLog(@"Did hit didselectrowatindexpath");
+    PFUser *selectedUser = [self.contacts objectAtIndex:indexPath.row];
+    NSLog(@"selectedUser in didSelecteRowAtIndexPath: %@", selectedUser);
     self.selectedUser = selectedUser;
     [self performSegueWithIdentifier:@"FullConversationSegue" sender:tableView];
 }
