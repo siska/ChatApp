@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123DBA171A1158A60098DC3B /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123DBA161A1158A60098DC3B /* MultipeerConnectivity.framework */; };
+		123DBA1A1A1159170098DC3B /* MCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA191A1159170098DC3B /* MCManager.m */; };
+		123DBA1D1A1159EF0098DC3B /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA1C1A1159EF0098DC3B /* ChatViewController.m */; };
+		123DBA201A115AFB0098DC3B /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA1F1A115AFB0098DC3B /* ConnectionsViewController.m */; };
 		1241BA061A09AAC6003BD083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA051A09AAC6003BD083 /* main.m */; };
 		1241BA091A09AAC6003BD083 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA081A09AAC6003BD083 /* AppDelegate.m */; };
 		1241BA0C1A09AAC6003BD083 /* ChatApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA0A1A09AAC6003BD083 /* ChatApp.xcdatamodeld */; };
@@ -46,6 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		123DBA161A1158A60098DC3B /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		123DBA181A1159170098DC3B /* MCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCManager.h; sourceTree = "<group>"; };
+		123DBA191A1159170098DC3B /* MCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCManager.m; sourceTree = "<group>"; };
+		123DBA1B1A1159EF0098DC3B /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		123DBA1C1A1159EF0098DC3B /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		123DBA1E1A115AFB0098DC3B /* ConnectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionsViewController.h; sourceTree = "<group>"; };
+		123DBA1F1A115AFB0098DC3B /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionsViewController.m; sourceTree = "<group>"; };
 		1241BA001A09AAC6003BD083 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1241BA041A09AAC6003BD083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1241BA051A09AAC6003BD083 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				123DBA171A1158A60098DC3B /* MultipeerConnectivity.framework in Frameworks */,
 				1241BA471A09AC1C003BD083 /* libz.dylib in Frameworks */,
 				1241BA3B1A09AC04003BD083 /* Accounts.framework in Frameworks */,
 				1241BA3C1A09AC04003BD083 /* AdSupport.framework in Frameworks */,
@@ -119,6 +131,7 @@
 		1241B9F71A09AAC6003BD083 = {
 			isa = PBXGroup;
 			children = (
+				123DBA161A1158A60098DC3B /* MultipeerConnectivity.framework */,
 				1241BA021A09AAC6003BD083 /* ChatApp */,
 				1241BA1F1A09AAC6003BD083 /* ChatAppTests */,
 				1241BA011A09AAC6003BD083 /* Products */,
@@ -146,6 +159,10 @@
 				1241BA4C1A09B8FE003BD083 /* ContactsViewController.m */,
 				1241BA551A0AD109003BD083 /* MessageViewController.h */,
 				1241BA561A0AD109003BD083 /* MessageViewController.m */,
+				123DBA1B1A1159EF0098DC3B /* ChatViewController.h */,
+				123DBA1C1A1159EF0098DC3B /* ChatViewController.m */,
+				123DBA1E1A115AFB0098DC3B /* ConnectionsViewController.h */,
+				123DBA1F1A115AFB0098DC3B /* ConnectionsViewController.m */,
 				1241BA131A09AAC6003BD083 /* Images.xcassets */,
 				1241BA151A09AAC6003BD083 /* LaunchScreen.xib */,
 				1241BA0A1A09AAC6003BD083 /* ChatApp.xcdatamodeld */,
@@ -202,6 +219,8 @@
 				1241BA531A0A7D3A003BD083 /* Contact.m */,
 				1241BA581A0BDC7D003BD083 /* Message.h */,
 				1241BA591A0BDC7D003BD083 /* Message.m */,
+				123DBA181A1159170098DC3B /* MCManager.h */,
+				123DBA191A1159170098DC3B /* MCManager.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -309,8 +328,11 @@
 			files = (
 				1241BA0C1A09AAC6003BD083 /* ChatApp.xcdatamodeld in Sources */,
 				1241BA5A1A0BDC7D003BD083 /* Message.m in Sources */,
+				123DBA1D1A1159EF0098DC3B /* ChatViewController.m in Sources */,
 				1241BA091A09AAC6003BD083 /* AppDelegate.m in Sources */,
 				1241BA4D1A09B8FE003BD083 /* ContactsViewController.m in Sources */,
+				123DBA1A1A1159170098DC3B /* MCManager.m in Sources */,
+				123DBA201A115AFB0098DC3B /* ConnectionsViewController.m in Sources */,
 				1241BA0F1A09AAC6003BD083 /* RootViewController.m in Sources */,
 				1241BA541A0A7D3A003BD083 /* Contact.m in Sources */,
 				1241BA061A09AAC6003BD083 /* main.m in Sources */,

@@ -64,6 +64,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hW5-mX-7S3">
+                        <barButtonItem key="leftBarButtonItem" title="Multipeer" id="F0u-ew-rwN">
+                            <connections>
+                                <segue destination="Wii-ep-pFX" kind="show" id="grb-IQ-Dda"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="rsR-z9-CIP">
                             <connections>
                                 <segue destination="mr3-fn-xnq" kind="unwind" unwindAction="unwindFromLogOut:" id="rJA-cT-5Xj"/>
@@ -79,6 +84,137 @@
                 <exit id="mr3-fn-xnq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1845" y="307"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="EI4-uI-tIE">
+            <objects>
+                <viewController id="I8D-V8-H7X" customClass="ConnectionsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yjK-jW-mXz"/>
+                        <viewControllerLayoutGuide type="bottom" id="CLW-Nc-alz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fke-EW-5Af">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xC-xE-5FB">
+                                <rect key="frame" x="252" y="93" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="I8D-V8-H7X" id="fJZ-zh-Krh"/>
+                                </connections>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eP7-gO-wJd">
+                                <rect key="frame" x="276" y="142" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjE-hX-U82">
+                                <rect key="frame" x="229" y="198" width="143" height="30"/>
+                                <state key="normal" title="browseDeviceButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSh-OQ-U73">
+                                <rect key="frame" x="239" y="250" width="122" height="30"/>
+                                <state key="normal" title="disconnectButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ekO-Ap-Yqg">
+                                <rect key="frame" x="128" y="318" width="344" height="205"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="GjY-rm-7fp">
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GjY-rm-7fp" id="BZn-rA-jEC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="I8D-V8-H7X" id="MBQ-IE-tLX"/>
+                                    <outlet property="delegate" destination="I8D-V8-H7X" id="TN1-8z-MC5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="lmO-jZ-vvz"/>
+                    <connections>
+                        <outlet property="browseDeviceButton" destination="PjE-hX-U82" id="dXy-2s-4Fm"/>
+                        <outlet property="disconnectButton" destination="cSh-OQ-U73" id="a6M-HL-bUd"/>
+                        <outlet property="switchToggle" destination="eP7-gO-wJd" id="lRK-BU-e94"/>
+                        <outlet property="tableViewConnectedDevices" destination="ekO-Ap-Yqg" id="gbg-5y-dfd"/>
+                        <outlet property="textName" destination="9xC-xE-5FB" id="GkO-cO-XbR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jdr-W6-dC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2551" y="1635"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="KDB-AE-zF3">
+            <objects>
+                <viewController id="fI1-EH-p5a" customClass="ChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I3f-iW-aTb"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Kv-Kt-waU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CZF-nq-fUD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5X-6Z-29D">
+                                <rect key="frame" x="238" y="293" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fI1-EH-p5a" id="Ntt-6q-SnT"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jr6-8p-0Qq">
+                                <rect key="frame" x="180" y="96" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jr6-8p-0Qq" firstAttribute="top" secondItem="I3f-iW-aTb" secondAttribute="bottom" constant="32" id="R5n-Q0-y5H"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="zxp-dM-LRg"/>
+                    <connections>
+                        <outlet property="chatTextField" destination="L5X-6Z-29D" id="9FV-Cb-SMf"/>
+                        <outlet property="chatWindowTextView" destination="jr6-8p-0Qq" id="tyX-d8-n6f"/>
+                        <outlet property="topConstraint" destination="R5n-Q0-y5H" id="lQp-Sj-qyb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PIE-hO-vML" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2551" y="973"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="lT7-QT-8sF">
+            <objects>
+                <tabBarController id="Wii-ep-pFX" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="jXX-zV-L33">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fI1-EH-p5a" kind="relationship" relationship="viewControllers" id="g11-C1-bPO"/>
+                        <segue destination="I8D-V8-H7X" kind="relationship" relationship="viewControllers" id="Ron-S9-WEB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="loa-oj-SOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1845" y="1268"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="UU1-zN-nbX">
@@ -148,7 +284,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="messageTextField" destination="gDP-3g-P9v" id="y7y-d4-G3a"/>
+                        <outlet property="messageTextField" destination="gDP-3g-P9v" id="8Ye-DT-exN"/>
                         <outlet property="tableView" destination="yig-u9-oVX" id="mJO-Ov-RmD"/>
                     </connections>
                 </viewController>
