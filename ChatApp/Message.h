@@ -14,5 +14,6 @@
 @property NSString *message;
 @property PFUser *userCurrent;
 @property PFUser *userContact;
+@property NSDate *date;
 
 @end

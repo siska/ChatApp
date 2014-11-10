@@ -13,6 +13,7 @@
 @dynamic message;
 @dynamic userCurrent;
 @dynamic userContact;
+@dynamic date;
 
 +(NSString *)parseClassName
 {

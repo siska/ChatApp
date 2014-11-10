@@ -64,7 +64,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hW5-mX-7S3">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="rsR-z9-CIP">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="rsR-z9-CIP">
                             <connections>
                                 <segue destination="mr3-fn-xnq" kind="unwind" unwindAction="unwindFromLogOut:" id="rJA-cT-5Xj"/>
                             </connections>
@@ -115,7 +115,7 @@
                                 <rect key="frame" x="0.0" y="114" width="600" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rul-zR-IZM">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCellID" id="Rul-zR-IZM">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rul-zR-IZM" id="ZG1-f7-7Hy">
@@ -123,6 +123,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2Uz-Xd-ZKq" id="pxA-f9-ZDE"/>
+                                    <outlet property="delegate" destination="2Uz-Xd-ZKq" id="eDQ-yu-sTk"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -136,10 +140,16 @@
                             <constraint firstItem="yig-u9-oVX" firstAttribute="top" secondItem="02g-i4-BVd" secondAttribute="bottom" id="sUV-R4-blX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qje-sp-c6p"/>
+                    <navigationItem key="navigationItem" id="qje-sp-c6p">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="9Jg-7h-89O">
+                            <connections>
+                                <action selector="onRefreshTapped:" destination="2Uz-Xd-ZKq" id="dvq-xm-GXC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="messageTextField" destination="gDP-3g-P9v" id="y7y-d4-G3a"/>
-                        <outlet property="messageView" destination="02g-i4-BVd" id="6Cw-0W-Lfe"/>
+                        <outlet property="tableView" destination="yig-u9-oVX" id="mJO-Ov-RmD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUi-Mq-yxP" userLabel="First Responder" sceneMemberID="firstResponder"/>
