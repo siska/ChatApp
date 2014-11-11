@@ -11,6 +11,9 @@
 		123DBA1A1A1159170098DC3B /* MCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA191A1159170098DC3B /* MCManager.m */; };
 		123DBA1D1A1159EF0098DC3B /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA1C1A1159EF0098DC3B /* ChatViewController.m */; };
 		123DBA201A115AFB0098DC3B /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA1F1A115AFB0098DC3B /* ConnectionsViewController.m */; };
+		123DBA271A1282A00098DC3B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123DBA251A1282A00098DC3B /* Bolts.framework */; };
+		123DBA281A1282A00098DC3B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123DBA261A1282A00098DC3B /* Parse.framework */; };
+		123DBA2A1A1285030098DC3B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123DBA291A1285030098DC3B /* ParseUI.framework */; };
 		1241BA061A09AAC6003BD083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA051A09AAC6003BD083 /* main.m */; };
 		1241BA091A09AAC6003BD083 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA081A09AAC6003BD083 /* AppDelegate.m */; };
 		1241BA0C1A09AAC6003BD083 /* ChatApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA0A1A09AAC6003BD083 /* ChatApp.xcdatamodeld */; };
@@ -19,8 +22,6 @@
 		1241BA141A09AAC6003BD083 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1241BA131A09AAC6003BD083 /* Images.xcassets */; };
 		1241BA171A09AAC6003BD083 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1241BA151A09AAC6003BD083 /* LaunchScreen.xib */; };
 		1241BA231A09AAC6003BD083 /* ChatAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA221A09AAC6003BD083 /* ChatAppTests.m */; };
-		1241BA2E1A09ABB8003BD083 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1241BA2C1A09ABB8003BD083 /* Bolts.framework */; };
-		1241BA2F1A09ABB9003BD083 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1241BA2D1A09ABB8003BD083 /* Parse.framework */; };
 		1241BA3B1A09AC04003BD083 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1241BA301A09AC04003BD083 /* Accounts.framework */; };
 		1241BA3C1A09AC04003BD083 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1241BA311A09AC04003BD083 /* AdSupport.framework */; };
 		1241BA3D1A09AC04003BD083 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1241BA321A09AC04003BD083 /* AudioToolbox.framework */; };
@@ -57,6 +58,9 @@
 		123DBA1C1A1159EF0098DC3B /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		123DBA1E1A115AFB0098DC3B /* ConnectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionsViewController.h; sourceTree = "<group>"; };
 		123DBA1F1A115AFB0098DC3B /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionsViewController.m; sourceTree = "<group>"; };
+		123DBA251A1282A00098DC3B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../../../Downloads/parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
+		123DBA261A1282A00098DC3B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../../../Downloads/parse-library-1/Parse.framework"; sourceTree = "<group>"; };
+		123DBA291A1285030098DC3B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		1241BA001A09AAC6003BD083 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1241BA041A09AAC6003BD083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1241BA051A09AAC6003BD083 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,8 +75,6 @@
 		1241BA1C1A09AAC6003BD083 /* ChatAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1241BA211A09AAC6003BD083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1241BA221A09AAC6003BD083 /* ChatAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatAppTests.m; sourceTree = "<group>"; };
-		1241BA2C1A09ABB8003BD083 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		1241BA2D1A09ABB8003BD083 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1241BA301A09AC04003BD083 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		1241BA311A09AC04003BD083 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		1241BA321A09AC04003BD083 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -100,6 +102,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				123DBA2A1A1285030098DC3B /* ParseUI.framework in Frameworks */,
+				123DBA271A1282A00098DC3B /* Bolts.framework in Frameworks */,
+				123DBA281A1282A00098DC3B /* Parse.framework in Frameworks */,
 				123DBA171A1158A60098DC3B /* MultipeerConnectivity.framework in Frameworks */,
 				1241BA471A09AC1C003BD083 /* libz.dylib in Frameworks */,
 				1241BA3B1A09AC04003BD083 /* Accounts.framework in Frameworks */,
@@ -113,8 +118,6 @@
 				1241BA431A09AC04003BD083 /* Security.framework in Frameworks */,
 				1241BA441A09AC04003BD083 /* Social.framework in Frameworks */,
 				1241BA451A09AC04003BD083 /* SystemConfiguration.framework in Frameworks */,
-				1241BA2F1A09ABB9003BD083 /* Parse.framework in Frameworks */,
-				1241BA2E1A09ABB8003BD083 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +134,6 @@
 		1241B9F71A09AAC6003BD083 = {
 			isa = PBXGroup;
 			children = (
-				123DBA161A1158A60098DC3B /* MultipeerConnectivity.framework */,
 				1241BA021A09AAC6003BD083 /* ChatApp */,
 				1241BA1F1A09AAC6003BD083 /* ChatAppTests */,
 				1241BA011A09AAC6003BD083 /* Products */,
@@ -175,6 +177,10 @@
 		1241BA031A09AAC6003BD083 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				123DBA291A1285030098DC3B /* ParseUI.framework */,
+				123DBA251A1282A00098DC3B /* Bolts.framework */,
+				123DBA261A1282A00098DC3B /* Parse.framework */,
+				123DBA161A1158A60098DC3B /* MultipeerConnectivity.framework */,
 				1241BA461A09AC1C003BD083 /* libz.dylib */,
 				1241BA301A09AC04003BD083 /* Accounts.framework */,
 				1241BA311A09AC04003BD083 /* AdSupport.framework */,
@@ -187,8 +193,6 @@
 				1241BA381A09AC04003BD083 /* Security.framework */,
 				1241BA391A09AC04003BD083 /* Social.framework */,
 				1241BA3A1A09AC04003BD083 /* SystemConfiguration.framework */,
-				1241BA2C1A09ABB8003BD083 /* Bolts.framework */,
-				1241BA2D1A09ABB8003BD083 /* Parse.framework */,
 				1241BA041A09AAC6003BD083 /* Info.plist */,
 				1241BA051A09AAC6003BD083 /* main.m */,
 			);
