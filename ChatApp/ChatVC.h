@@ -8,6 +8,7 @@
 
 #import "JSQMessagesViewController.h"
 #import <Parse/Parse.h>
+#import "Conversation.h"
 
 @interface ChatVC : JSQMessagesViewController
 @property PFUser *selectedUser;

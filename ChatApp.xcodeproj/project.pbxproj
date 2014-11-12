@@ -15,7 +15,7 @@
 		123DBA281A1282A00098DC3B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123DBA261A1282A00098DC3B /* Parse.framework */; };
 		123DBA2A1A1285030098DC3B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123DBA291A1285030098DC3B /* ParseUI.framework */; };
 		123DBA2D1A12C60C0098DC3B /* ChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA2C1A12C60C0098DC3B /* ChatVC.m */; };
-		123DBA331A13C69A0098DC3B /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA321A13C69A0098DC3B /* ChatMessage.m */; };
+		123DBA361A13D56E0098DC3B /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA351A13D56E0098DC3B /* Conversation.m */; };
 		1241BA061A09AAC6003BD083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA051A09AAC6003BD083 /* main.m */; };
 		1241BA091A09AAC6003BD083 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA081A09AAC6003BD083 /* AppDelegate.m */; };
 		1241BA0C1A09AAC6003BD083 /* ChatApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA0A1A09AAC6003BD083 /* ChatApp.xcdatamodeld */; };
@@ -67,8 +67,8 @@
 		123DBA291A1285030098DC3B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		123DBA2B1A12C60C0098DC3B /* ChatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatVC.h; sourceTree = "<group>"; };
 		123DBA2C1A12C60C0098DC3B /* ChatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatVC.m; sourceTree = "<group>"; };
-		123DBA311A13C69A0098DC3B /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
-		123DBA321A13C69A0098DC3B /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
+		123DBA341A13D56E0098DC3B /* Conversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversation.h; sourceTree = "<group>"; };
+		123DBA351A13D56E0098DC3B /* Conversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversation.m; sourceTree = "<group>"; };
 		1241BA001A09AAC6003BD083 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1241BA041A09AAC6003BD083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1241BA051A09AAC6003BD083 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -170,8 +170,6 @@
 				1241BA101A09AAC6003BD083 /* Main.storyboard */,
 				123DBA2B1A12C60C0098DC3B /* ChatVC.h */,
 				123DBA2C1A12C60C0098DC3B /* ChatVC.m */,
-				123DBA311A13C69A0098DC3B /* ChatMessage.h */,
-				123DBA321A13C69A0098DC3B /* ChatMessage.m */,
 				1241BA0D1A09AAC6003BD083 /* RootViewController.h */,
 				1241BA0E1A09AAC6003BD083 /* RootViewController.m */,
 				1241BA4B1A09B8FE003BD083 /* ContactsViewController.h */,
@@ -238,6 +236,8 @@
 			children = (
 				1241BA521A0A7D3A003BD083 /* Contact.h */,
 				1241BA531A0A7D3A003BD083 /* Contact.m */,
+				123DBA341A13D56E0098DC3B /* Conversation.h */,
+				123DBA351A13D56E0098DC3B /* Conversation.m */,
 				1241BA581A0BDC7D003BD083 /* Message.h */,
 				1241BA591A0BDC7D003BD083 /* Message.m */,
 				123DBA181A1159170098DC3B /* MCManager.h */,
@@ -402,9 +402,9 @@
 				123DBA2D1A12C60C0098DC3B /* ChatVC.m in Sources */,
 				1241BA0C1A09AAC6003BD083 /* ChatApp.xcdatamodeld in Sources */,
 				1241BA5A1A0BDC7D003BD083 /* Message.m in Sources */,
-				123DBA331A13C69A0098DC3B /* ChatMessage.m in Sources */,
 				123DBA1D1A1159EF0098DC3B /* ChatViewController.m in Sources */,
 				1241BA091A09AAC6003BD083 /* AppDelegate.m in Sources */,
+				123DBA361A13D56E0098DC3B /* Conversation.m in Sources */,
 				1241BA4D1A09B8FE003BD083 /* ContactsViewController.m in Sources */,
 				123DBA1A1A1159170098DC3B /* MCManager.m in Sources */,
 				123DBA201A115AFB0098DC3B /* ConnectionsViewController.m in Sources */,

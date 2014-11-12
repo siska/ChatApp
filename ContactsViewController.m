@@ -129,7 +129,6 @@
 {
     if ([segue.identifier isEqual:@"FullConversationSegue"]) {
         ChatVC *viewController = [segue destinationViewController];
-        //NSLog(@"self.selectedUser: %@", self.selectedUser);
         viewController.selectedUser = self.selectedUser;
     }
 }
