@@ -9,6 +9,7 @@
 #import "ContactsViewController.h"
 #import <Parse/Parse.h>
 #import "MessageViewController.h"
+#import "ChatVC.h" //imported to allow for prepare for segue
 
 @interface ContactsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -127,7 +128,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqual:@"FullConversationSegue"]) {
-        MessageViewController *viewController = [segue destinationViewController];
+        ChatVC *viewController = [segue destinationViewController];
+        //NSLog(@"self.selectedUser: %@", self.selectedUser);
         viewController.selectedUser = self.selectedUser;
     }
 }
