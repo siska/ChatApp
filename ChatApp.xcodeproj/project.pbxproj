@@ -11,8 +11,6 @@
 		123DBA1A1A1159170098DC3B /* MCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA191A1159170098DC3B /* MCManager.m */; };
 		123DBA1D1A1159EF0098DC3B /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA1C1A1159EF0098DC3B /* ChatViewController.m */; };
 		123DBA201A115AFB0098DC3B /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA1F1A115AFB0098DC3B /* ConnectionsViewController.m */; };
-		123DBA271A1282A00098DC3B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123DBA251A1282A00098DC3B /* Bolts.framework */; };
-		123DBA281A1282A00098DC3B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123DBA261A1282A00098DC3B /* Parse.framework */; };
 		123DBA2A1A1285030098DC3B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123DBA291A1285030098DC3B /* ParseUI.framework */; };
 		123DBA2D1A12C60C0098DC3B /* ChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA2C1A12C60C0098DC3B /* ChatVC.m */; };
 		123DBA361A13D56E0098DC3B /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 123DBA351A13D56E0098DC3B /* Conversation.m */; };
@@ -41,6 +39,10 @@
 		1241BA571A0AD109003BD083 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA561A0AD109003BD083 /* MessageViewController.m */; };
 		1241BA5A1A0BDC7D003BD083 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA591A0BDC7D003BD083 /* Message.m */; };
 		1AFEB7F1415A990E72FC2B99 /* libPods-ChatApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */; };
+		CEC91AD11A13ED5300F82570 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91ACE1A13ED5300F82570 /* Parse.framework */; };
+		CEC91AD21A13ED5300F82570 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */; };
+		CEC91AD31A13ED5300F82570 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91AD01A13ED5300F82570 /* ParseUI.framework */; };
+		CEC91AD51A13EDAA00F82570 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91AD41A13EDAA00F82570 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,11 @@
 		1241BA591A0BDC7D003BD083 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		32286F06E8E3FC535EDC17FD /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChatApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC91ACC1A13ED3200F82570 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		CEC91ACE1A13ED5300F82570 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Documents/Parse.framework; sourceTree = "<group>"; };
+		CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ../../Documents/ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		CEC91AD01A13ED5300F82570 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ../../Documents/ParseUI.framework; sourceTree = "<group>"; };
+		CEC91AD41A13EDAA00F82570 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +119,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC91AD11A13ED5300F82570 /* Parse.framework in Frameworks */,
+				CEC91AD51A13EDAA00F82570 /* FacebookSDK.framework in Frameworks */,
+				CEC91AD21A13ED5300F82570 /* ParseFacebookUtils.framework in Frameworks */,
+				CEC91AD31A13ED5300F82570 /* ParseUI.framework in Frameworks */,
 				123DBA2A1A1285030098DC3B /* ParseUI.framework in Frameworks */,
-				123DBA271A1282A00098DC3B /* Bolts.framework in Frameworks */,
-				123DBA281A1282A00098DC3B /* Parse.framework in Frameworks */,
 				123DBA171A1158A60098DC3B /* MultipeerConnectivity.framework in Frameworks */,
 				1241BA471A09AC1C003BD083 /* libz.dylib in Frameworks */,
 				1241BA3B1A09AC04003BD083 /* Accounts.framework in Frameworks */,
@@ -258,6 +267,11 @@
 		6EE91726D98F74E94543889E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEC91AD41A13EDAA00F82570 /* FacebookSDK.framework */,
+				CEC91ACE1A13ED5300F82570 /* Parse.framework */,
+				CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */,
+				CEC91AD01A13ED5300F82570 /* ParseUI.framework */,
+				CEC91ACC1A13ED3200F82570 /* Bolts.framework */,
 				A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */,
 			);
 			name = Frameworks;
@@ -535,12 +549,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 08BB2B98B5B92D500205CC0F /* Pods-ChatApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ChatApp",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -553,12 +569,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 32286F06E8E3FC535EDC17FD /* Pods-ChatApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ChatApp",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -33,10 +33,13 @@
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
         [signUpViewController setDelegate:self]; // Set ourselves as the delegate
 
-        // Assign our sign up controller to be displayed from the login controller
         [logInViewController setSignUpController:signUpViewController];
+//        PFLogInViewController *facebookLoginViewController = [[PFLogInViewController alloc]init];
+//        [facebookLoginViewController setDelegate:self];
+        [logInViewController setFacebookPermissions:@[ @"public_profile", @"email", @"user_location", @"user_friends"]];
+        [logInViewController setFields:PFLogInFieldsDismissButton|PFLogInFieldsDefault| PFLogInFieldsFacebook];
 
-        // Present the log in view controller
+
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
     else
@@ -51,6 +54,12 @@
 }
 
 #pragma mark - Delegate Methods
+-(void)facebookLoginViewController:(PFLogInViewController *)facebookLoginController didLogInUser:(PFUser *)user{
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
+    }];
+
+}
 
 // Sent to the delegate to determine whether the log in request should be submitted to the server.
 - (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password {
