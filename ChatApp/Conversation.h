@@ -13,8 +13,9 @@
 
 @interface Conversation : PFObject <PFSubclassing>
 
-@property PFUser *userOne;
-@property PFUser *userTwo;
+@property NSArray *users;
+//@property PFUser *userOne;
+//@property PFUser *userTwo;
 @property JSQMessage *message;
 
 @end

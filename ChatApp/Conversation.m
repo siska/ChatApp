@@ -10,8 +10,9 @@
 
 @implementation Conversation
 
-@dynamic userOne;
-@dynamic userTwo;
+@dynamic users;
+//@dynamic userOne;
+//@dynamic userTwo;
 @dynamic message;
 
 +(void)load
