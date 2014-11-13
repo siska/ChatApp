@@ -12,6 +12,7 @@
 
 @dynamic objectIDForUser;
 @dynamic username;
+@dynamic name;
 @dynamic email;
 @dynamic user;
 @dynamic contactForUser;

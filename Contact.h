@@ -12,6 +12,7 @@
 @interface Contact : PFObject <PFSubclassing>
 @property NSString *objectIDForUser;
 @property NSString *username;
+@property NSString *name;
 @property NSString *email;
 @property PFUser *user;
 @property PFObject *contactForUser;
