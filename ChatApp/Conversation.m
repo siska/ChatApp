@@ -13,7 +13,14 @@
 @dynamic users;
 //@dynamic userOne;
 //@dynamic userTwo;
-@dynamic message;
+//@dynamic message;
+
+//required to create JSQMessage in ChatVC
+@dynamic text;
+@dynamic senderId;
+@dynamic senderDisplayName;
+@dynamic date;
+
 
 +(void)load
 {

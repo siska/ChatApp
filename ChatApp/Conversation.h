@@ -16,6 +16,11 @@
 @property NSArray *users;
 //@property PFUser *userOne;
 //@property PFUser *userTwo;
-@property JSQMessage *message;
+//@property JSQMessage *message;
+@property NSString *text;
+@property NSString *senderId;
+@property NSString *senderDisplayName;
+@property NSDate *date;
+
 
 @end

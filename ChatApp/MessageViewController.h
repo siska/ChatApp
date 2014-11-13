@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "Message.h"
 
-@interface MessageViewController : UIViewController
+@interface MessageViewController : UIViewController 
 @property PFUser *selectedUser;
 
 @end
