@@ -39,6 +39,7 @@
 		1241BA571A0AD109003BD083 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA561A0AD109003BD083 /* MessageViewController.m */; };
 		1241BA5A1A0BDC7D003BD083 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA591A0BDC7D003BD083 /* Message.m */; };
 		1AFEB7F1415A990E72FC2B99 /* libPods-ChatApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */; };
+		CE309E011A13FA5800E38782 /* FacebookFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = CE309E001A13FA5800E38782 /* FacebookFriend.m */; };
 		CEC91AD11A13ED5300F82570 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91ACE1A13ED5300F82570 /* Parse.framework */; };
 		CEC91AD21A13ED5300F82570 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */; };
 		CEC91AD31A13ED5300F82570 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91AD01A13ED5300F82570 /* ParseUI.framework */; };
@@ -107,6 +108,8 @@
 		1241BA591A0BDC7D003BD083 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		32286F06E8E3FC535EDC17FD /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChatApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE309DFF1A13FA5800E38782 /* FacebookFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookFriend.h; sourceTree = "<group>"; };
+		CE309E001A13FA5800E38782 /* FacebookFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookFriend.m; sourceTree = "<group>"; };
 		CEC91ACC1A13ED3200F82570 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		CEC91ACE1A13ED5300F82570 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Documents/Parse.framework; sourceTree = "<group>"; };
 		CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ../../Documents/ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 				1241BA591A0BDC7D003BD083 /* Message.m */,
 				123DBA181A1159170098DC3B /* MCManager.h */,
 				123DBA191A1159170098DC3B /* MCManager.m */,
+				CE309DFF1A13FA5800E38782 /* FacebookFriend.h */,
+				CE309E001A13FA5800E38782 /* FacebookFriend.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 				1241BA4D1A09B8FE003BD083 /* ContactsViewController.m in Sources */,
 				123DBA1A1A1159170098DC3B /* MCManager.m in Sources */,
 				123DBA201A115AFB0098DC3B /* ConnectionsViewController.m in Sources */,
+				CE309E011A13FA5800E38782 /* FacebookFriend.m in Sources */,
 				1241BA0F1A09AAC6003BD083 /* RootViewController.m in Sources */,
 				1241BA541A0A7D3A003BD083 /* Contact.m in Sources */,
 				1241BA061A09AAC6003BD083 /* main.m in Sources */,
