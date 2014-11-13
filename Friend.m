@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Vi & Ryan. All rights reserved.
 //
 
-#import "Contact.h"
+#import "Friend.h"
 
-@implementation Contact
+@implementation Friend
 
 @dynamic name;
 @dynamic fbID;

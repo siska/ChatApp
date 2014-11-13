@@ -35,7 +35,7 @@
 		1241BA451A09AC04003BD083 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1241BA3A1A09AC04003BD083 /* SystemConfiguration.framework */; };
 		1241BA471A09AC1C003BD083 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1241BA461A09AC1C003BD083 /* libz.dylib */; };
 		1241BA4D1A09B8FE003BD083 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA4C1A09B8FE003BD083 /* ContactsViewController.m */; };
-		1241BA541A0A7D3A003BD083 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA531A0A7D3A003BD083 /* Contact.m */; };
+		1241BA541A0A7D3A003BD083 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA531A0A7D3A003BD083 /* Friend.m */; };
 		1241BA571A0AD109003BD083 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA561A0AD109003BD083 /* MessageViewController.m */; };
 		1241BA5A1A0BDC7D003BD083 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA591A0BDC7D003BD083 /* Message.m */; };
 		1AFEB7F1415A990E72FC2B99 /* libPods-ChatApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */; };
@@ -99,8 +99,8 @@
 		1241BA461A09AC1C003BD083 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1241BA4B1A09B8FE003BD083 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsViewController.h; path = ../ContactsViewController.h; sourceTree = "<group>"; };
 		1241BA4C1A09B8FE003BD083 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsViewController.m; path = ../ContactsViewController.m; sourceTree = "<group>"; };
-		1241BA521A0A7D3A003BD083 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contact.h; path = ../Contact.h; sourceTree = "<group>"; };
-		1241BA531A0A7D3A003BD083 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = ../Contact.m; sourceTree = "<group>"; };
+		1241BA521A0A7D3A003BD083 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Friend.h; path = ../Friend.h; sourceTree = "<group>"; };
+		1241BA531A0A7D3A003BD083 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Friend.m; path = ../Friend.m; sourceTree = "<group>"; };
 		1241BA551A0AD109003BD083 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		1241BA561A0AD109003BD083 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		1241BA581A0BDC7D003BD083 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
@@ -243,8 +243,8 @@
 		1241BA511A0A7CCB003BD083 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				1241BA521A0A7D3A003BD083 /* Contact.h */,
-				1241BA531A0A7D3A003BD083 /* Contact.m */,
+				1241BA521A0A7D3A003BD083 /* Friend.h */,
+				1241BA531A0A7D3A003BD083 /* Friend.m */,
 				123DBA341A13D56E0098DC3B /* Conversation.h */,
 				123DBA351A13D56E0098DC3B /* Conversation.m */,
 				1241BA581A0BDC7D003BD083 /* Message.h */,
@@ -423,7 +423,7 @@
 				123DBA1A1A1159170098DC3B /* MCManager.m in Sources */,
 				123DBA201A115AFB0098DC3B /* ConnectionsViewController.m in Sources */,
 				1241BA0F1A09AAC6003BD083 /* RootViewController.m in Sources */,
-				1241BA541A0A7D3A003BD083 /* Contact.m in Sources */,
+				1241BA541A0A7D3A003BD083 /* Friend.m in Sources */,
 				1241BA061A09AAC6003BD083 /* main.m in Sources */,
 				1241BA571A0AD109003BD083 /* MessageViewController.m in Sources */,
 			);

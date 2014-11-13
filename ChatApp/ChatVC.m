@@ -39,7 +39,7 @@
 {
     PFQuery *queryForConversations = [PFQuery queryWithClassName:@"Conversation"];
     [queryForConversations whereKey:@"users" containsAllObjectsInArray:self.usersInConversation];
-    [queryForConversations setLimit:10]; //review where this cuts it off at - most recent or oldest messages
+    //[queryForConversations setLimit:10]; //review where this cuts it off at - most recent or oldest messages - only allows
     [queryForConversations findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          if (error) {
@@ -65,7 +65,7 @@
 
         [self.messages addObject:message];
         [self.collectionView reloadData];
-        NSLog(@"self.messages: %@", self.messages);
+        NSLog(@"self.messages in createJSQMessagesFromConversations: %@", self.messages);
     }
 }
 
@@ -87,6 +87,7 @@
             NSLog(@"Error: %@", [error userInfo]);
         }
         else {
+            self.messages = [NSMutableArray array];
             [self queryConversationsMessagesFromParse];
         }
     }];
@@ -104,7 +105,7 @@
              messageBubbleImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     JSQMessage *message = self.messages[indexPath.item];
-    if ([message.senderId isEqualToString:[PFUser currentUser].objectId])
+    if (![message.senderId isEqualToString:[PFUser currentUser].objectId])
     {
         return self.outgoingBubbleImageData;
     }

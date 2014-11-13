@@ -7,7 +7,7 @@
 //
 
 #import "RootViewController.h"
-#import "Contact.h"
+#import "Friend.h"
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface RootViewController ()
@@ -125,42 +125,93 @@
 
 
 
--(void)requestForFBFriends{
-
-
-    [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        if (!error) {
-            // result will contain an array with your user's friends in the "data" key
+-(void)requestForFBFriends
+{   NSLog(@"requestForFBFriends received request");
+    [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error)
+    {
+        if (!error)
+        {   // result will contain an array with your user's friends in the "data" key
             NSArray *friendsObjects = [result objectForKey:@"data"];
-
-            for (NSDictionary *friendObject in friendsObjects) {
-                Contact *friend = [Contact object];
-                friend.name = [friendObject objectForKey:@"name"];
-                friend.fbID = [friendObject objectForKey:@"id"];
-                friend.lastName = [friendObject objectForKey:@"last_name"];
-                friend.firstName = [friendObject objectForKey:@"first_name"];
-                friend.email = [[Contact object ]objectForKey:@"email"];
-                friend.friendOf.username = [[PFUser currentUser]objectForKey:@"name"];
-                PFQuery *friendQuery = [PFUser query];
-                [friendQuery whereKey:@"id" containedIn:friendsObjects];
-                NSLog(@"QUACK: %@", friendsObjects);
-                self.friendsObjectArray = [NSArray arrayWithObject:friendsObjects];
-                NSString *userID = [[friendsObjects firstObject] objectForKey:@"id"];
-//                NSString *userURL = [[NSString stringWithFormat:@"/%@/friends",userID] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-
-                NSLog(@"Hello: %@",userID);
-              //  PFRelation *relationship = [[PFUser currentUser] relationForKey:@"contacts"];
-
-                [friend saveInBackground];
-
-
-
+            for (NSDictionary *friend in friendsObjects)
+            {
+                PFQuery *queryForUser = [PFQuery queryWithClassName:@"_User"];
+                [queryForUser whereKey:@"FacebookID" equalTo:[friend objectForKey:@"id"]];
+                [queryForUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+                 {
+                     if (error)
+                     {
+                         NSLog(@"Error: %@", error.userInfo);
+                     }
+                     else
+                     {
+                         PFRelation *relationship = [[PFUser currentUser] relationForKey:@"friends"];
+                         for (PFUser *friendInArray in objects)
+                         {
+                             [relationship addObject:friendInArray];
+                         }
+                         [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+                          {
+                              if (error)
+                              {
+                                  NSLog(@"Error: %@", [error userInfo]);
+                              }
+                          }];
+                     }
+                     //[self saveAllContactsForUserToParse];
+                 }];
             }
-            
         }
     }];
 }
 
+
+//                -(void)saveAllContactsForUserToParse
+//                {
+//                    PFRelation *relationship = [[PFUser currentUser] relationForKey:@"friends"];
+//
+//                    for (PFObject *contact in self.allUsers)
+//                    {
+//                        [relationship addObject:contact];
+//                    }
+//
+//                    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+//                     {
+//                         if (error)
+//                         {
+//                             NSLog(@"Error: %@", [error userInfo]);
+//                         }
+//                     }];
+//                    self.currentUserWithRelations = [PFUser currentUser];
+//                    [self queryForContacts];
+//                }
+//
+//
+//                Contact *friend = [Contact object];
+//                friend.name = [friendObject objectForKey:@"name"];
+//                friend.fbID = [friendObject objectForKey:@"id"];
+//                friend.lastName = [friendObject objectForKey:@"last_name"];
+//                friend.firstName = [friendObject objectForKey:@"first_name"];
+//                friend.email = [[Contact object ]objectForKey:@"email"];
+//                friend.friendOf.username = [[PFUser currentUser]objectForKey:@"name"];
+//
+//
+//
+//                PFQuery *friendQuery = [PFUser query];
+//                [friendQuery whereKey:@"id" containedIn:friendsObjects];
+//                NSLog(@"QUACK: %@", friendsObjects);
+//                self.friendsObjectArray = [NSArray arrayWithObject:friendsObjects];
+//                NSString *userID = [[friendsObjects firstObject] objectForKey:@"id"];
+////                NSString *userURL = [[NSString stringWithFormat:@"/%@/friends",userID] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//
+//                NSLog(@"Hello: %@",userID);
+//              //  PFRelation *relationship = [[PFUser currentUser] relationForKey:@"contacts"];
+//
+//                [friend saveInBackground];
+//            }
+//            
+//        }
+//    }];
+//}
 
 
 #pragma mark - Delegate Methods

@@ -9,7 +9,7 @@
 #import <Parse/Parse.h>
 #import <Foundation/Foundation.h>
 
-@interface Contact : PFObject <PFSubclassing>
+@interface Friend : PFObject <PFSubclassing>
 @property NSString *name;
 @property NSString *fbID;
 @property NSString *lastName;

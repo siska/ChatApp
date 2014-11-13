@@ -17,7 +17,6 @@
 @property NSMutableDictionary *contactsSeparated;
 @property NSArray *contactSectionTitles;
 @property NSArray *allUsers;
-@property PFUser *currentUserWithRelations;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property PFUser *selectedUser;
 
@@ -30,74 +29,83 @@
     self.contacts = [[NSArray alloc] init];
     self.contactsSeparated = [[NSMutableDictionary alloc] init];
 
-    [self queryAllUsersFromParse];
+    [self queryFriendsFromParse];
 }
 
--(void)queryFriendsFromParse {
-    PFQuery *queryForFriends = [PFQuery queryWithClassName:@"Contacts"];
-    [queryForFriends findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"I gots an error");
-        }else{
-            
-        }
-    }];
-}
--(void)queryAllUsersFromParse
+-(void)queryFriendsFromParse
 {
-    PFQuery *queryForUsers = [PFQuery queryWithClassName:@"User"];
-    [queryForUsers findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-    {
-        if (error) {
-            NSLog(@"Error: %@", error.userInfo);
-            self.allUsers = [NSArray array];
-        }
-        else
-        {
-            self.allUsers = objects;
-        }
-        [self saveAllContactsForUserToParse];
-    }];
-}
-
--(void)saveAllContactsForUserToParse
-{
-    PFRelation *relationship = [[PFUser currentUser] relationForKey:@"contacts"];
-
-    for (PFObject *contact in self.allUsers)
-    {
-        [relationship addObject:contact];
-    }
-
-    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-    {
-        if (error)
-        {
-            NSLog(@"Error: %@", [error userInfo]);
-        }
-    }];
-    self.currentUserWithRelations = [PFUser currentUser];
-    [self queryForContacts];
-}
-
--(void)queryForContacts
-{
-    PFRelation *relation = [self.currentUserWithRelations relationForKey:@"contacts"];
-
+    PFRelation *relation = [[PFUser currentUser] relationForKey:@"friends"];
     PFQuery *query = [relation query];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) // results contains all current users relations
-    {
-        if (error)
-        {
-            NSLog(@"Error in queryForContacts: %@", error.userInfo);
-        }
-        else
-        {
-            self.contacts = results; //[objects sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //say name specfcly?
-        }
-        [self createDictionaryWithKeys];
-    }];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         if (error)
+         {
+             NSLog(@"Error in queryForContacts: %@", error.userInfo);
+         }
+         else
+         {
+             self.contacts = objects; //[objects sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //say name specfcly?
+         }
+         [self createDictionaryWithKeys];
+     }];
 }
+
+//-(void)queryAllUsersFromParse
+//{
+//    PFQuery *queryForUsers = [PFQuery queryWithClassName:@"User"];
+//    [queryForUsers findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+//    {
+//        if (error) {
+//            NSLog(@"Error: %@", error.userInfo);
+//            self.allUsers = [NSArray array];
+//        }
+//        else
+//        {
+//            self.allUsers = objects;
+//        }
+//        [self saveAllContactsForUserToParse];
+//    }];
+//}
+//
+//-(void)saveAllContactsForUserToParse
+//{
+//    PFRelation *relationship = [[PFUser currentUser] relationForKey:@"contacts"];
+//
+//    for (PFObject *contact in self.allUsers)
+//    {
+//        [relationship addObject:contact];
+//    }
+//
+//    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+//    {
+//        if (error)
+//        {
+//            NSLog(@"Error: %@", [error userInfo]);
+//        }
+//    }];
+//    self.currentUserWithRelations = [PFUser currentUser];
+//    [self queryForContacts];
+//}
+//
+//-(void)queryForContacts
+//{
+//    PFRelation *relation = [self.currentUserWithRelations relationForKey:@"contacts"];
+//
+//    PFQuery *query = [relation query];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) // results contains all current users relations
+//    {
+//        if (error)
+//        {
+//            NSLog(@"Error in queryForContacts: %@", error.userInfo);
+//        }
+//        else
+//        {
+//            self.contacts = results; //[objects sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //say name specfcly?
+//        }
+//        [self createDictionaryWithKeys];
+//    }];
+//}
 
 -(void)createDictionaryWithKeys //creates the keys in a dictionary with empty arrays - those will be set later
 {
@@ -131,8 +139,8 @@
         [self.contactsSeparated setObject:tempArrayForKeys forKey:firstLetter];
     }
     [self.tableView reloadData];
-    NSLog(@"self.contacts: %@", self.contacts);
-    NSLog(@"self.contactsSeparated: %@", self.contactsSeparated);
+    //NSLog(@"self.contacts: %@", self.contacts);
+    //NSLog(@"self.contactsSeparated: %@", self.contactsSeparated);
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -180,7 +188,7 @@
     NSString *sectionTitle = [self.contactSectionTitles objectAtIndex:indexPath.section];
     NSArray *sectionContacts = [self.contactsSeparated objectForKey:sectionTitle];
     PFUser *contact = [sectionContacts objectAtIndex:indexPath.row];
-    cell.textLabel.text = contact.username;
+    cell.textLabel.text = contact.email;
 
     return cell;
 }
