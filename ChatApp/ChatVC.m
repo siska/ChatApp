@@ -11,7 +11,8 @@
 @interface ChatVC ()
 @property NSArray *usersInConversation;
 @property NSArray *conversationsFromParse;
-@property NSArray *messages;
+@property NSMutableArray *messages;
+@property JSQMessagesAvatarImage *placeholderImageData;
 @property JSQMessagesBubbleImage *outgoingBubbleImageData;
 @property JSQMessagesBubbleImage *incomingBubbleImageData;
 
@@ -23,9 +24,13 @@
     [super viewDidLoad];
 
     self.usersInConversation = [[NSArray alloc] initWithObjects:[PFUser currentUser], self.selectedUser, nil];
+    self.messages = [[NSMutableArray alloc] init];
+
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
     self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
     self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
+
+    self.placeholderImageData = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"blank_avatar"] diameter:30.0];
 
     [self queryConversationsMessagesFromParse];
 }
@@ -55,7 +60,12 @@
     for (Conversation *conversation in self.conversationsFromParse) {
 
         JSQMessage *message = [[JSQMessage alloc] initWithSenderId:conversation.senderId senderDisplayName:conversation.senderDisplayName date:conversation.date text:conversation.text];
-        [self.messages arrayByAddingObject:message];
+//        message.senderId = conversation.senderId;
+//        message.date = conversation.date;
+
+        [self.messages addObject:message];
+        [self.collectionView reloadData];
+        NSLog(@"self.messages: %@", self.messages);
     }
 }
 
@@ -101,11 +111,12 @@
     return self.incomingBubbleImageData;
 }
 
-//- (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView
-//                    avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    PFUser *user = users[indexPath.item];
-//    if (avatars[user.objectId] == nil)
+- (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView
+                    avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.placeholderImageData;
+//    PFUser *user = self.usersInConversation[indexPath.item];
+//    if (self.avatars[user.objectId] == nil)
 //    {
 //        PFFile *fileThumbnail = user[PF_USER_THUMBNAIL];
 //        [fileThumbnail getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error)
@@ -119,7 +130,7 @@
 //        return placeholderImageData;
 //    }
 //    else return avatars[user.objectId];
-//}
+}
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath
 {
