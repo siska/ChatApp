@@ -188,7 +188,7 @@
     NSString *sectionTitle = [self.contactSectionTitles objectAtIndex:indexPath.section];
     NSArray *sectionContacts = [self.contactsSeparated objectForKey:sectionTitle];
     PFUser *contact = [sectionContacts objectAtIndex:indexPath.row];
-    cell.textLabel.text = contact.email;
+    cell.textLabel.text = [contact objectForKey:@"Name"]; //contact.email;
 
     return cell;
 }
