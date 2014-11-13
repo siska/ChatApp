@@ -19,9 +19,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     self.mcManager = [[MCManager alloc] init];
+    
     [Parse setApplicationId:@"F9mKwa3Ng5enu1SvdwTaLGL3GWV1cxw2yC9VwQNE" clientKey:@"8JHfymvHKdlcCPkVGoGAg2y04ApldGqCC6WLbKQY"];
     [PFFacebookUtils initializeFacebook];
+    
     return YES;
 }
 - (BOOL)application:(UIApplication *)application

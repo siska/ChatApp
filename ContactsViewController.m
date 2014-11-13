@@ -33,9 +33,19 @@
     [self queryAllUsersFromParse];
 }
 
+-(void)queryFriendsFromParse {
+    PFQuery *queryForFriends = [PFQuery queryWithClassName:@"Contacts"];
+    [queryForFriends findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"I gots an error");
+        }else{
+            
+        }
+    }];
+}
 -(void)queryAllUsersFromParse
 {
-    PFQuery *queryForUsers = [PFQuery queryWithClassName:@"_User"];
+    PFQuery *queryForUsers = [PFQuery queryWithClassName:@"User"];
     [queryForUsers findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     {
         if (error) {

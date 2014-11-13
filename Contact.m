@@ -10,12 +10,12 @@
 
 @implementation Contact
 
-@dynamic objectIDForUser;
-@dynamic username;
 @dynamic name;
+@dynamic fbID;
 @dynamic email;
-@dynamic user;
-@dynamic contactForUser;
+@dynamic firstName;
+@dynamic lastName;
+@dynamic friendOf;
 
 +(void)load
 {
@@ -24,7 +24,7 @@
 
 +(NSString *)parseClassName
 {
-    return @"Contact";
+    return @"Contacts";
 }
 
 @end

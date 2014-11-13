@@ -10,12 +10,11 @@
 #import <Foundation/Foundation.h>
 
 @interface Contact : PFObject <PFSubclassing>
-@property NSString *objectIDForUser;
-@property NSString *username;
 @property NSString *name;
+@property NSString *fbID;
+@property NSString *lastName;
+@property NSString *firstName;
 @property NSString *email;
-@property PFUser *user;
-@property PFObject *contactForUser;
-
+@property PFUser *friendOf;
 
 @end
