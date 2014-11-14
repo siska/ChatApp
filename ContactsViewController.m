@@ -110,8 +110,8 @@
 -(void)createDictionaryWithKeys //creates the keys in a dictionary with empty arrays - those will be set later
 {
     for (PFUser *contact in self.contacts)
-    {   NSLog(@".username: %@", contact.username);
-        NSString *firstLetter = [contact.username substringToIndex:0];
+    {
+        NSString *firstLetter = [[contact objectForKey:@"FirstName"] substringToIndex:1]; //changed to 1 - it knows the first letter is V, but now it doesn't show any friends in contacts
         firstLetter =[firstLetter uppercaseString];
         NSLog(@"createDictionaryWithKeys what is the first letter: %@", firstLetter);
 
