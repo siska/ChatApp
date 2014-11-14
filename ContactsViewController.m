@@ -110,9 +110,10 @@
 -(void)createDictionaryWithKeys //creates the keys in a dictionary with empty arrays - those will be set later
 {
     for (PFUser *contact in self.contacts)
-    {
+    {   NSLog(@".username: %@", contact.username);
         NSString *firstLetter = [contact.username substringToIndex:0];
         firstLetter =[firstLetter uppercaseString];
+        NSLog(@"createDictionaryWithKeys what is the first letter: %@", firstLetter);
 
         NSMutableArray *emptyArray = [[NSMutableArray alloc] init];
 
@@ -138,6 +139,7 @@
 
         [self.contactsSeparated setObject:tempArrayForKeys forKey:firstLetter];
     }
+    NSLog(@"createDictionaryWithKeys self.contactsSeparated: %@", self.contactsSeparated);
     [self.tableView reloadData];
     //NSLog(@"self.contacts: %@", self.contacts);
     //NSLog(@"self.contactsSeparated: %@", self.contactsSeparated);
@@ -155,9 +157,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Did hit didselectrowatindexpath");
+    //NSLog(@"Did hit didselectrowatindexpath");
     PFUser *selectedUser = [self.contacts objectAtIndex:indexPath.row];
-    NSLog(@"selectedUser in didSelecteRowAtIndexPath: %@", selectedUser);
+    //NSLog(@"selectedUser in didSelecteRowAtIndexPath: %@", selectedUser);
     self.selectedUser = selectedUser;
     [self performSegueWithIdentifier:@"FullConversationSegue" sender:tableView];
 }

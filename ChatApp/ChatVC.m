@@ -78,7 +78,7 @@
     conversation.users = [[NSArray alloc] initWithObjects:[PFUser currentUser], self.selectedUser, nil];
     conversation.text = text;
     conversation.senderId = [PFUser currentUser].objectId;
-    conversation.senderDisplayName = senderDisplayName;
+    conversation.senderDisplayName = [[PFUser currentUser] objectForKey:@"FirstName"];
     conversation.date = date;
 
     [conversation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
