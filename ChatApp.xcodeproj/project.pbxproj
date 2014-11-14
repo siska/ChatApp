@@ -330,7 +330,7 @@
 				TargetAttributes = {
 					1241B9FF1A09AAC6003BD083 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = FBA3YYHYLL;
+						DevelopmentTeam = 5CN5Q9B2Q2;
 					};
 					1241BA1B1A09AAC6003BD083 = {
 						CreatedOnToolsVersion = 6.1;
@@ -563,7 +563,7 @@
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f19a5f7a-62b8-49e2-95ff-08a67b6d466d";
+				PROVISIONING_PROFILE = "";
 				nothinghere = "";
 			};
 			name = Debug;
@@ -584,7 +584,7 @@
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f19a5f7a-62b8-49e2-95ff-08a67b6d466d";
+				PROVISIONING_PROFILE = "";
 				nothinghere = "";
 			};
 			name = Release;

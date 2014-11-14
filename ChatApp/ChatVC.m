@@ -88,6 +88,9 @@
         }
         else {
             self.messages = [NSMutableArray array];
+            UITextView *textView = self.inputToolbar.contentView.textView;
+            textView.text = nil;
+            [textView.undoManager removeAllActions];
             [self queryConversationsMessagesFromParse];
         }
     }];
@@ -179,7 +182,7 @@
     JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell *)[super collectionView:collectionView cellForItemAtIndexPath:indexPath];
 
     JSQMessage *message = self.messages[indexPath.item];
-    if ([message.senderId isEqualToString:[PFUser currentUser].objectId])
+    if (![message.senderId isEqualToString:[PFUser currentUser].objectId])
     {
         cell.textView.textColor = [UIColor blackColor];
     }
