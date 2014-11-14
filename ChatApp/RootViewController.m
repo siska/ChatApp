@@ -26,7 +26,7 @@
 {
     [super viewDidAppear:animated];
 
-    if (![PFUser currentUser] && ![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
+    if (![PFUser currentUser]) //&& ![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
     {
 
         [self addFacebookLoginButton];
@@ -232,12 +232,11 @@
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
-    }]; // Dismiss the PFSignUpViewController
-
-}
+//
+//- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
+//    }]; // Dismiss the PFSignUpViewController
+//
 
 @end
