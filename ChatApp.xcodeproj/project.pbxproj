@@ -330,7 +330,7 @@
 				TargetAttributes = {
 					1241B9FF1A09AAC6003BD083 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 5CN5Q9B2Q2;
+						DevelopmentTeam = FBA3YYHYLL;
 					};
 					1241BA1B1A09AAC6003BD083 = {
 						CreatedOnToolsVersion = 6.1;
@@ -553,7 +553,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: vi tran (FBA3YYHYLL)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -563,7 +563,7 @@
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c6d39864-09c9-4a93-ab56-e820ac8d5671";
 				nothinghere = "";
 			};
 			name = Debug;
@@ -574,7 +574,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: vi tran (FBA3YYHYLL)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -584,7 +584,7 @@
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c6d39864-09c9-4a93-ab56-e820ac8d5671";
 				nothinghere = "";
 			};
 			name = Release;

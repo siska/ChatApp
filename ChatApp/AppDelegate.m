@@ -24,8 +24,16 @@
     
     [Parse setApplicationId:@"F9mKwa3Ng5enu1SvdwTaLGL3GWV1cxw2yC9VwQNE" clientKey:@"8JHfymvHKdlcCPkVGoGAg2y04ApldGqCC6WLbKQY"];
     [PFFacebookUtils initializeFacebook];
-    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes: UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
     return YES;
+}
+
+
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    [PFPush handlePush:userInfo];
 }
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
