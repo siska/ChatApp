@@ -28,6 +28,7 @@
     [super viewDidLoad];
     self.contacts = [[NSArray alloc] init];
     self.contactsSeparated = [[NSMutableDictionary alloc] init];
+    self.contactSectionTitles = [NSArray array];
 
     [self queryFriendsFromParse];
 }
@@ -123,6 +124,7 @@
         }
     }
     self.contactSectionTitles = [[self.contactsSeparated allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //this should order the keys for us
+    NSLog(@"self.contactSectionTitles: %@", self.contactSectionTitles); //correctly adds a V
     [self createArraysForDictionaryKeys];
 }
 
@@ -130,13 +132,15 @@
 {
     for (PFUser *contact in self.contacts)
     {
-        NSString *firstLetter = [contact.username substringToIndex:0];
+        NSString *firstLetter = [[contact objectForKey:@"FirstName"] substringToIndex:1];
         firstLetter =[firstLetter uppercaseString];
+        NSLog(@"createArraysForDictionaryKeys firstLetter: %@", firstLetter);
 
         NSMutableArray *tempArrayForKeys = [NSMutableArray array];
         tempArrayForKeys = [self.contactsSeparated objectForKey:firstLetter];
         [tempArrayForKeys addObject:contact];
 
+        NSLog(@"tempArrayForKeys: %@", tempArrayForKeys);
         [self.contactsSeparated setObject:tempArrayForKeys forKey:firstLetter];
     }
     NSLog(@"createDictionaryWithKeys self.contactsSeparated: %@", self.contactsSeparated);
