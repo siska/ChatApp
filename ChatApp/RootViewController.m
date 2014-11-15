@@ -19,7 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    CAShapeLayer *line = [CAShapeLayer new];
+    CGMutablePathRef something = CGPathCreateMutable();
+    CGPathMoveToPoint(something, nil, 50, 50);
+    CGPathAddLineToPoint(something, nil, 320, 320);
+    CGPathRetain(something);
+    line.path = [UIBezierPath bezierPathWithCGPath:something].CGPath;
+    line.strokeColor = [UIColor blueColor].CGColor;
+    line.lineWidth = 5;
+
+    [self.view.layer addSublayer:line];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -36,6 +47,8 @@
         [self performSegueWithIdentifier:@"FromLogIn" sender:self];
     }
 }
+
+
 
 -(void)addFacebookLoginButton{
     FBLoginView *loginView = [[FBLoginView alloc] init];
