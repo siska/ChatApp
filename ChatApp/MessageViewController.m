@@ -174,4 +174,19 @@
     }];
 }
 
+//-(void)pushNotificationsFromParse{
+//    PFQuery *userQuery = [PFUser query];
+//    [userQuery whereKey:@"senderId" matchesKey:(NSString *) inQuery:<#(PFQuery *)#>
+//
+//    // Find devices associated with these users
+//    PFQuery *pushQuery = [PFInstallation query];
+//    [pushQuery whereKey:@"user" matchesQuery:userQuery];
+//
+//    // Send push notification to query
+//    PFPush *push = [[PFPush alloc] init];
+//    [push setQuery:pushQuery]; // Set our Installation query
+//    [push setMessage:@"Free hotdogs at the Parse concession stand!"];
+//    [push sendPushInBackground];
+//}
+
 @end

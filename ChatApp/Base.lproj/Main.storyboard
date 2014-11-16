@@ -160,6 +160,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="I8D-V8-H7X" id="MBQ-IE-tLX"/>
                                     <outlet property="delegate" destination="I8D-V8-H7X" id="TN1-8z-MC5"/>

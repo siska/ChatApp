@@ -112,7 +112,6 @@
 		CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ../../Documents/ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		CEC91AD01A13ED5300F82570 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ../../Documents/ParseUI.framework; sourceTree = "<group>"; };
 		CEC91AD41A13EDAA00F82570 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
-		CEEEBFED1A15C3990041977B /* XC_comviandryanChatApp.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = XC_comviandryanChatApp.mobileprovision; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +201,6 @@
 		1241BA031A09AAC6003BD083 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CEEEBFED1A15C3990041977B /* XC_comviandryanChatApp.mobileprovision */,
 				123DBA291A1285030098DC3B /* ParseUI.framework */,
 				123DBA251A1282A00098DC3B /* Bolts.framework */,
 				123DBA261A1282A00098DC3B /* Parse.framework */,
@@ -486,7 +484,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -506,7 +504,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "9d44b52b-e8ed-4b9c-9360-b8610deead53";
+				PROVISIONING_PROFILE = "c6d39864-09c9-4a93-ab56-e820ac8d5671";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -528,7 +526,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: vi tran (FBA3YYHYLL)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -541,7 +539,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "9d44b52b-e8ed-4b9c-9360-b8610deead53";
+				PROVISIONING_PROFILE = "c6d39864-09c9-4a93-ab56-e820ac8d5671";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -554,7 +552,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: vi tran (FBA3YYHYLL)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: vi tran (FBA3YYHYLL)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ChatApp",
@@ -563,7 +561,7 @@
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c6d39864-09c9-4a93-ab56-e820ac8d5671";
+				PROVISIONING_PROFILE = "84303c74-1c85-4a3e-bf6a-c403aa5cd467";
 				nothinghere = "";
 			};
 			name = Debug;
@@ -575,7 +573,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: vi tran (FBA3YYHYLL)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: vi tran (FBA3YYHYLL)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ChatApp",
@@ -584,7 +582,7 @@
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c6d39864-09c9-4a93-ab56-e820ac8d5671";
+				PROVISIONING_PROFILE = "84303c74-1c85-4a3e-bf6a-c403aa5cd467";
 				nothinghere = "";
 			};
 			name = Release;
