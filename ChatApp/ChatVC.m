@@ -60,12 +60,9 @@
     for (Conversation *conversation in self.conversationsFromParse) {
 
         JSQMessage *message = [[JSQMessage alloc] initWithSenderId:conversation.senderId senderDisplayName:conversation.senderDisplayName date:conversation.date text:conversation.text];
-//        message.senderId = conversation.senderId;
-//        message.date = conversation.date;
 
         [self.messages addObject:message];
         [self.collectionView reloadData];
-        NSLog(@"self.messages in createJSQMessagesFromConversations: %@", self.messages);
     }
 }
 
@@ -79,7 +76,10 @@
     conversation.text = text;
     conversation.senderId = [PFUser currentUser].objectId;
     conversation.senderDisplayName = [[PFUser currentUser] objectForKey:@"FirstName"];
+    conversation.receiverID = self.selectedUser;
     conversation.date = date;
+    NSLog(@"receiverID: %@", conversation.receiverID);
+    NSLog(@" %@ ", self.selectedUser);
 
     [conversation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
     {

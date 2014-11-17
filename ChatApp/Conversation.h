@@ -21,6 +21,6 @@
 @property NSString *senderId;
 @property NSString *senderDisplayName;
 @property NSDate *date;
-
+@property PFUser *receiverID;
 
 @end

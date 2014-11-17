@@ -20,6 +20,7 @@
 @dynamic senderId;
 @dynamic senderDisplayName;
 @dynamic date;
+@dynamic receiverID;
 
 
 +(void)load
