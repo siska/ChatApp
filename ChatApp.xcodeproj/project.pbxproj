@@ -39,6 +39,7 @@
 		1241BA571A0AD109003BD083 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA561A0AD109003BD083 /* MessageViewController.m */; };
 		1241BA5A1A0BDC7D003BD083 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA591A0BDC7D003BD083 /* Message.m */; };
 		1AFEB7F1415A990E72FC2B99 /* libPods-ChatApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */; };
+		CE50D1FA1A1AACC9004FE1B1 /* Image 11-17-14 at 2.11 PM.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE50D1F91A1AACC9004FE1B1 /* Image 11-17-14 at 2.11 PM.jpeg */; };
 		CEC91AD11A13ED5300F82570 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91ACE1A13ED5300F82570 /* Parse.framework */; };
 		CEC91AD21A13ED5300F82570 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */; };
 		CEC91AD31A13ED5300F82570 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91AD01A13ED5300F82570 /* ParseUI.framework */; };
@@ -107,6 +108,7 @@
 		1241BA591A0BDC7D003BD083 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		32286F06E8E3FC535EDC17FD /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChatApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE50D1F91A1AACC9004FE1B1 /* Image 11-17-14 at 2.11 PM.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Image 11-17-14 at 2.11 PM.jpeg"; sourceTree = "<group>"; };
 		CEC91ACC1A13ED3200F82570 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		CEC91ACE1A13ED5300F82570 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Documents/Parse.framework; sourceTree = "<group>"; };
 		CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ../../Documents/ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		1241B9F71A09AAC6003BD083 = {
 			isa = PBXGroup;
 			children = (
+				CE50D1F91A1AACC9004FE1B1 /* Image 11-17-14 at 2.11 PM.jpeg */,
 				1241BA021A09AAC6003BD083 /* ChatApp */,
 				1241BA1F1A09AAC6003BD083 /* ChatAppTests */,
 				1241BA011A09AAC6003BD083 /* Products */,
@@ -362,6 +365,7 @@
 			files = (
 				1241BA121A09AAC6003BD083 /* Main.storyboard in Resources */,
 				1241BA171A09AAC6003BD083 /* LaunchScreen.xib in Resources */,
+				CE50D1FA1A1AACC9004FE1B1 /* Image 11-17-14 at 2.11 PM.jpeg in Resources */,
 				1241BA141A09AAC6003BD083 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

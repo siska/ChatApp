@@ -45,7 +45,10 @@
     }
 }
 
-
+- (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
+    NSString *logout = [[NSString alloc]init];
+    logout = @"You're not logged in!";
+}
 
 
 //-(IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
