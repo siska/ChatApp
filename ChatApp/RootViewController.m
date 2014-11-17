@@ -19,7 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    FBLoginView *loginView = [[FBLoginView alloc] initWithFrame:self.view.bounds];
+    loginView.backgroundColor = [UIColor greenColor];
+    loginView.center = self.view.center;
+    [self.view addSubview:loginView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -28,35 +31,31 @@
 
     if (![PFUser currentUser]) //&& ![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
     {
-
-        [self addFacebookLoginButton];
+        NSLog(@"Sup Homie");
+        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [indicator setTintColor:[UIColor blackColor]];
+        [indicator startAnimating];
+        [self.view addSubview:indicator];
+        [self loggedInSendFBinfoToParse];
     }
     else
     {
+        NSLog(@"Noodles");
+
         [self performSegueWithIdentifier:@"FromLogIn" sender:self];
     }
 }
 
--(void)addFacebookLoginButton{
-    FBLoginView *loginView = [[FBLoginView alloc] init];
-    loginView.frame = CGRectOffset(loginView.frame, (self.view.center.x - (loginView.frame.size.width / 2)), (self.view.center.y - (loginView.frame.size.height / 2)));
-    [loginView setDelegate:self];
-    [self.view addSubview:loginView];
-    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [indicator setTintColor:[UIColor blackColor]];
-    [indicator startAnimating];
-    [self.view addSubview:indicator];
-    [self loggedInSendFBinfoToParse];
 
-}
 
--(IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
-{
-    [PFUser logOut];
-}
+
+//-(IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
+//{
+//    [PFUser logOut];
+//}
 #pragma mark - Add Facebook Login
 
--(void)loggedInSendFBinfoToParse{
+- (void)loggedInSendFBinfoToParse{
     // Align the button in the center horizontally
 
       // Set permissions required from the facebook user account, you can find more about facebook permissions here https://developers.facebook.com/docs/facebook-login/permissions/v2.0
@@ -215,23 +214,23 @@
 
 
 #pragma mark - Delegate Methods
--(void)facebookLoginViewController:(PFLogInViewController *)facebookLoginController didLogInUser:(PFUser *)user{
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
-    }];
-
-}
-
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
-    }];
-}
-
-
-- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//-(void)facebookLoginViewController:(PFLogInViewController *)facebookLoginController didLogInUser:(PFUser *)user{
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
+//    }];
+//
+//}
+//
+//- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
+//    }];
+//}
+//
+//
+//- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 //
 //- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
 //    [self dismissViewControllerAnimated:YES completion:^{

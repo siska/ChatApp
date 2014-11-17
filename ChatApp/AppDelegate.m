@@ -55,7 +55,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 
     // Store the deviceToken in the current Installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation addUniqueObject:@"b_objectId" forKey:@"channels"];
+    [currentInstallation addUniqueObject:@"Messages" forKey:@"channels"];
     if ([PFUser currentUser]) //&& ![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
     {
         currentInstallation[@"User"] = [PFUser currentUser];
