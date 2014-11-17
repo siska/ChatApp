@@ -28,6 +28,7 @@
     [super viewDidLoad];
     self.contacts = [[NSArray alloc] init];
     self.contactsSeparated = [[NSMutableDictionary alloc] init];
+    self.contactSectionTitles = [NSArray array];
 
     [self queryFriendsFromParse];
 }
@@ -111,8 +112,9 @@
 {
     for (PFUser *contact in self.contacts)
     {
-        NSString *firstLetter = [contact.username substringToIndex:0];
+        NSString *firstLetter = [[contact objectForKey:@"FirstName"] substringToIndex:1]; //changed to 1 - it knows the first letter is V, but now it doesn't show any friends in contacts
         firstLetter =[firstLetter uppercaseString];
+        NSLog(@"createDictionaryWithKeys what is the first letter: %@", firstLetter);
 
         NSMutableArray *emptyArray = [[NSMutableArray alloc] init];
 
@@ -122,6 +124,7 @@
         }
     }
     self.contactSectionTitles = [[self.contactsSeparated allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //this should order the keys for us
+    NSLog(@"self.contactSectionTitles: %@", self.contactSectionTitles); //correctly adds a V
     [self createArraysForDictionaryKeys];
 }
 
@@ -129,15 +132,18 @@
 {
     for (PFUser *contact in self.contacts)
     {
-        NSString *firstLetter = [contact.username substringToIndex:0];
+        NSString *firstLetter = [[contact objectForKey:@"FirstName"] substringToIndex:1];
         firstLetter =[firstLetter uppercaseString];
+        NSLog(@"createArraysForDictionaryKeys firstLetter: %@", firstLetter);
 
         NSMutableArray *tempArrayForKeys = [NSMutableArray array];
         tempArrayForKeys = [self.contactsSeparated objectForKey:firstLetter];
         [tempArrayForKeys addObject:contact];
 
+        NSLog(@"tempArrayForKeys: %@", tempArrayForKeys);
         [self.contactsSeparated setObject:tempArrayForKeys forKey:firstLetter];
     }
+    NSLog(@"createDictionaryWithKeys self.contactsSeparated: %@", self.contactsSeparated);
     [self.tableView reloadData];
     //NSLog(@"self.contacts: %@", self.contacts);
     //NSLog(@"self.contactsSeparated: %@", self.contactsSeparated);
@@ -155,9 +161,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Did hit didselectrowatindexpath");
+    //NSLog(@"Did hit didselectrowatindexpath");
     PFUser *selectedUser = [self.contacts objectAtIndex:indexPath.row];
-    NSLog(@"selectedUser in didSelecteRowAtIndexPath: %@", selectedUser);
+    //NSLog(@"selectedUser in didSelecteRowAtIndexPath: %@", selectedUser);
     self.selectedUser = selectedUser;
     [self performSegueWithIdentifier:@"FullConversationSegue" sender:tableView];
 }
