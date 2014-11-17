@@ -19,7 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    FBLoginView *loginView = [[FBLoginView alloc] initWithFrame:self.view.bounds];
+    loginView.center = self.view.center;
+    [self.view addSubview:loginView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -28,38 +30,34 @@
 
     if (![PFUser currentUser]) //&& ![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
     {
-
-        [self addFacebookLoginButton];
+        NSLog(@"Sup Homie");
+        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [indicator setTintColor:[UIColor blackColor]];
+        [indicator startAnimating];
+        [self.view addSubview:indicator];
+        [self loggedInSendFBinfoToParse];
     }
     else
     {
+        NSLog(@"Noodles");
+
         [self performSegueWithIdentifier:@"FromLogIn" sender:self];
     }
 }
 
--(void)addFacebookLoginButton{
-    FBLoginView *loginView = [[FBLoginView alloc] init];
-    loginView.frame = CGRectOffset(loginView.frame, (self.view.center.x - (loginView.frame.size.width / 2)), (self.view.center.y - (loginView.frame.size.height / 2)));
-    [loginView setDelegate:self];
-    [self.view addSubview:loginView];
-    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [indicator setTintColor:[UIColor blackColor]];
-    [indicator startAnimating];
-    [self.view addSubview:indicator];
-    [self loggedInSendFBinfoToParse];
 
-}
 
--(IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
-{
-    [PFUser logOut];
-}
+
+//-(IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
+//{
+//    [PFUser logOut];
+//}
 #pragma mark - Add Facebook Login
 
--(void)loggedInSendFBinfoToParse{
+- (void)loggedInSendFBinfoToParse{
     // Align the button in the center horizontally
 
-      // Set permissions required from the facebook user account, you can find more about facebook permissions here https://developers.facebook.com/docs/facebook-login/permissions/v2.0
+    // Set permissions required from the facebook user account, you can find more about facebook permissions here https://developers.facebook.com/docs/facebook-login/permissions/v2.0
     NSArray *permissionsArray = @[ @"public_profile", @"email", @"user_location", @"user_friends"];
 
     // Login PFUser using Facebook
@@ -83,7 +81,7 @@
                                                   cancelButtonTitle:nil
                                                   otherButtonTitles:@"Dismiss", nil];
             [alert show];
-        } 
+        }
 
 
 
@@ -91,7 +89,7 @@
 
 
         else {
-            
+
             FBRequest *request = [FBRequest requestForMe];
             [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                 NSLog(@"FOOBILES2 %@", error);
@@ -109,7 +107,7 @@
                             NSLog(@"FOOBILES %@", error);
                         }];
 
-                    [self performSegueWithIdentifier:@"FromLogIn" sender:self];
+                        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
                     } @catch (id e) {
                         NSLog(@"%@", e);
                     }
@@ -128,40 +126,40 @@
 -(void)requestForFBFriends
 {   NSLog(@"requestForFBFriends received request");
     [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error)
-    {
-        if (!error)
-        {   // result will contain an array with your user's friends in the "data" key
-            NSArray *friendsObjects = [result objectForKey:@"data"];
-            for (NSDictionary *friend in friendsObjects)
-            {
-                PFQuery *queryForUser = [PFQuery queryWithClassName:@"_User"];
-                [queryForUser whereKey:@"FacebookID" equalTo:[friend objectForKey:@"id"]];
-                [queryForUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-                 {
-                     if (error)
-                     {
-                         NSLog(@"Error: %@", error.userInfo);
-                     }
-                     else
-                     {
-                         PFRelation *relationship = [[PFUser currentUser] relationForKey:@"friends"];
-                         for (PFUser *friendInArray in objects)
-                         {
-                             [relationship addObject:friendInArray];
-                         }
-                         [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+     {
+         if (!error)
+         {   // result will contain an array with your user's friends in the "data" key
+             NSArray *friendsObjects = [result objectForKey:@"data"];
+             for (NSDictionary *friend in friendsObjects)
+             {
+                 PFQuery *queryForUser = [PFQuery queryWithClassName:@"_User"];
+                 [queryForUser whereKey:@"FacebookID" equalTo:[friend objectForKey:@"id"]];
+                 [queryForUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+                  {
+                      if (error)
+                      {
+                          NSLog(@"Error: %@", error.userInfo);
+                      }
+                      else
+                      {
+                          PFRelation *relationship = [[PFUser currentUser] relationForKey:@"friends"];
+                          for (PFUser *friendInArray in objects)
                           {
-                              if (error)
-                              {
-                                  NSLog(@"Error: %@", [error userInfo]);
-                              }
-                          }];
-                     }
-                     //[self saveAllContactsForUserToParse];
-                 }];
-            }
-        }
-    }];
+                              [relationship addObject:friendInArray];
+                          }
+                          [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+                           {
+                               if (error)
+                               {
+                                   NSLog(@"Error: %@", [error userInfo]);
+                               }
+                           }];
+                      }
+                      //[self saveAllContactsForUserToParse];
+                  }];
+             }
+         }
+     }];
 }
 
 
@@ -208,30 +206,30 @@
 //
 //                [friend saveInBackground];
 //            }
-//            
+//
 //        }
 //    }];
 //}
 
 
 #pragma mark - Delegate Methods
--(void)facebookLoginViewController:(PFLogInViewController *)facebookLoginController didLogInUser:(PFUser *)user{
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
-    }];
-
-}
-
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
-    }];
-}
-
-
-- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//-(void)facebookLoginViewController:(PFLogInViewController *)facebookLoginController didLogInUser:(PFUser *)user{
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
+//    }];
+//
+//}
+//
+//- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
+//    }];
+//}
+//
+//
+//- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 //
 //- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
 //    [self dismissViewControllerAnimated:YES completion:^{
