@@ -136,12 +136,18 @@
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eP7-gO-wJd">
                                 <rect key="frame" x="535" y="110" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchToggleVisibility:" destination="I8D-V8-H7X" eventType="valueChanged" id="45f-Lf-i5Y"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjE-hX-U82">
                                 <rect key="frame" x="234" y="147" width="132" height="30"/>
                                 <state key="normal" title="Browse for devices">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="browseDevicePressed:" destination="I8D-V8-H7X" eventType="touchUpInside" id="pFa-Jo-Wht"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visible to other devices?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KS-Gh-ug7">
                                 <rect key="frame" x="26" y="110" width="188" height="21"/>
@@ -171,6 +177,9 @@
                                 <state key="normal" title="Disconnect">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="disconnectOnButtonPressed:" destination="I8D-V8-H7X" eventType="touchUpInside" id="JVX-of-V3a"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -189,13 +198,13 @@
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="ekO-Ap-Yqg" firstAttribute="leading" secondItem="fke-EW-5Af" secondAttribute="leadingMargin" constant="-16" id="Xqy-hp-B51"/>
-                            <constraint firstItem="ekO-Ap-Yqg" firstAttribute="top" secondItem="PjE-hX-U82" secondAttribute="bottom" constant="3" id="YGl-yn-v2w"/>
                             <constraint firstItem="PjE-hX-U82" firstAttribute="leading" secondItem="fke-EW-5Af" secondAttribute="leadingMargin" constant="218" id="Ykm-ZH-bFH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ekO-Ap-Yqg" secondAttribute="trailing" constant="-16" id="ZcP-GZ-LnK"/>
                             <constraint firstItem="cSh-OQ-U73" firstAttribute="centerX" secondItem="ekO-Ap-Yqg" secondAttribute="centerX" id="Zg8-bs-bat"/>
                             <constraint firstAttribute="centerX" secondItem="PjE-hX-U82" secondAttribute="centerX" id="cJN-pE-32q"/>
                             <constraint firstAttribute="centerX" secondItem="cSh-OQ-U73" secondAttribute="centerX" id="d0S-Zu-L1o"/>
                             <constraint firstAttribute="centerX" secondItem="PjE-hX-U82" secondAttribute="centerX" id="dhK-7j-WWa"/>
+                            <constraint firstItem="ekO-Ap-Yqg" firstAttribute="top" secondItem="PjE-hX-U82" secondAttribute="bottom" constant="3" id="e44-Av-xjj"/>
                             <constraint firstItem="9xC-xE-5FB" firstAttribute="leading" secondItem="fke-EW-5Af" secondAttribute="leadingMargin" constant="10" id="eyY-yi-wju"/>
                             <constraint firstItem="eP7-gO-wJd" firstAttribute="top" secondItem="9xC-xE-5FB" secondAttribute="bottom" constant="8" id="fo8-EZ-38f"/>
                             <constraint firstItem="cSh-OQ-U73" firstAttribute="leading" secondItem="fke-EW-5Af" secondAttribute="leadingMargin" constant="245" id="lIG-hL-IOj">
@@ -212,6 +221,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="7oz-bV-Nip"/>
+                                <exclude reference="Pch-As-dh8"/>
                                 <exclude reference="otO-Rq-527"/>
                                 <exclude reference="3Ci-JU-xYM"/>
                                 <exclude reference="dhK-7j-WWa"/>
@@ -224,7 +235,6 @@
                             <mask key="constraints">
                                 <exclude reference="7oz-bV-Nip"/>
                                 <exclude reference="Pch-As-dh8"/>
-                                <exclude reference="YGl-yn-v2w"/>
                                 <include reference="otO-Rq-527"/>
                                 <include reference="3Ci-JU-xYM"/>
                                 <exclude reference="7Pz-Yr-1pw"/>
@@ -233,13 +243,13 @@
                                 <include reference="dhK-7j-WWa"/>
                                 <include reference="mPo-nl-ak2"/>
                                 <exclude reference="qM2-H7-gHs"/>
+                                <exclude reference="QMx-NF-LX5"/>
                                 <exclude reference="22D-uy-PXn"/>
                                 <include reference="Zg8-bs-bat"/>
                                 <exclude reference="d0S-Zu-L1o"/>
                                 <exclude reference="lIG-hL-IOj"/>
                                 <include reference="sLI-zR-IJu"/>
                                 <exclude reference="vMN-0L-c7a"/>
-                                <exclude reference="QMx-NF-LX5"/>
                             </mask>
                         </variation>
                     </view>
