@@ -19,9 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    FBLoginView *loginView = [[FBLoginView alloc] initWithFrame:self.view.bounds];
-    loginView.center = self.view.center;
-    [self.view addSubview:loginView];
+//    FBLoginView *loginView = [[FBLoginView alloc] initWithFrame:self.view.bounds];
+//    loginView.center = self.view.center;
+//    [self.view addSubview:loginView];
+}
+- (IBAction)FacebookLogin:(id)sender {
+
+    [self loggedInSendFBinfoToParse];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -108,6 +112,7 @@
 
                         [[PFUser currentUser]saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                             NSLog(@"FOOBILES %@", error);
+                         [self requestForFBFriends];
                         }];
 
                         [self performSegueWithIdentifier:@"FromLogIn" sender:self];
@@ -118,7 +123,7 @@
             }];
         }
 
-        [self requestForFBFriends];
+
 
     }];
 }

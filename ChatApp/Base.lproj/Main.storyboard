@@ -28,6 +28,9 @@
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="66" y="396" width="270" height="58"/>
                                 </variation>
+                                <connections>
+                                    <action selector="FacebookLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZPu-Xk-U1U"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk to people. Just do it. " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOg-dj-uhA">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
