@@ -8,7 +8,6 @@
 
 #import "ContactsViewController.h"
 #import <Parse/Parse.h>
-#import "MessageViewController.h"
 #import "ChatVC.h" //imported to allow for prepare for segue
 
 @interface ContactsViewController () <UITableViewDataSource, UITableViewDelegate>

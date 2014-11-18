@@ -22,6 +22,7 @@
     [super viewDidLoad];
     self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.chatTextField.delegate = self;
+    self.chatWindowTextView.editable = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
@@ -106,9 +107,9 @@
 
     NSLog(@"%@", NSStringFromCGRect(keyboardFrameBeginRect));
     [UIView animateWithDuration:0.3f animations:^ {
-        self.view.frame = CGRectMake(0, -(keyboardFrameBeginRect.size.height - 50), self.view.frame.size.width, self.view.frame.size.height);
+        self.view.frame = CGRectMake(0, -(keyboardFrameBeginRect.size.height -65), self.view.frame.size.width, self.view.frame.size.height);
 
-        self.topConstraint.constant = (keyboardFrameBeginRect.size.height - 30);
+        self.topConstraint.constant = (keyboardFrameBeginRect.size.height + 5);
 
 
     }];
@@ -117,9 +118,10 @@
     // Animate the current view back to its original position
     [UIView animateWithDuration:0.3f animations:^ {
 
-        self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        
-       // self.topConstraint.constant = 17;
+        self.view.frame = CGRectMake(0, 65 , self.view.frame.size.width, self.view.frame.size.height);
+
+        self.topConstraint.constant = 10;
+
     }];
 }
 
