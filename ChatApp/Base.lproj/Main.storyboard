@@ -20,14 +20,56 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageesss" translatesAutoresizingMaskIntoConstraints="NO" id="CkP-IJ-kl0">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlG-tz-d9a">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="facebook-login-button-002">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="66" y="396" width="270" height="58"/>
+                                </variation>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk to people. Just do it. " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOg-dj-uhA">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="19"/>
+                                <color key="textColor" red="0.043137256056070328" green="0.019607843831181526" blue="0.066666670143604279" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="102" y="177" width="242" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="FlG-tz-d9a" secondAttribute="centerY" id="IpA-NJ-Wkf">
+                                <variation key="widthClass=compact" constant="-125"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="CkP-IJ-kl0" secondAttribute="trailing" constant="-16" id="XXf-9x-emd"/>
+                            <constraint firstAttribute="centerX" secondItem="FlG-tz-d9a" secondAttribute="centerX" id="a2S-GY-odD"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="CkP-IJ-kl0" secondAttribute="bottom" id="gQy-ZX-gMe"/>
                             <constraint firstItem="CkP-IJ-kl0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="jhG-qQ-Loj"/>
                             <constraint firstItem="CkP-IJ-kl0" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="l7G-0G-sYr"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="FlG-tz-d9a"/>
+                                <exclude reference="TOg-dj-uhA"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="IpA-NJ-Wkf"/>
+                                <exclude reference="a2S-GY-odD"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="FlG-tz-d9a"/>
+                                <include reference="TOg-dj-uhA"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="IpA-NJ-Wkf"/>
+                                <include reference="a2S-GY-odD"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <segue destination="3ab-pr-f9T" kind="show" identifier="FromLogIn" id="T3j-yB-Rio"/>
@@ -35,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="307"/>
+            <point key="canvasLocation" x="244.5" y="307"/>
         </scene>
         <!--ChatVC-->
         <scene sceneID="Hxl-Fa-SjU">
@@ -445,6 +487,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="facebook-login-button-002" width="270" height="58"/>
         <image name="imageesss" width="320" height="568"/>
         <image name="iphone6landingpage" width="640" height="1136"/>
     </resources>
