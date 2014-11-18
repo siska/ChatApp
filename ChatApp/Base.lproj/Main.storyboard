@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -159,16 +159,6 @@
                                 <segue destination="eIb-l5-WoU" kind="show" id="TLL-uZ-Bmm"/>
                             </connections>
                         </barButtonItem>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ICg-O1-sYZ">
-                            <rect key="frame" x="238" y="7" width="124" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Test">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <segue destination="YxD-ui-tW1" kind="show" identifier="FullConversationSegue" id="4Vx-TG-WEk"/>
-                            </connections>
-                        </button>
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="rsR-z9-CIP">
                             <connections>
                                 <segue destination="mr3-fn-xnq" kind="unwind" unwindAction="unwindFromLogOut:" id="rJA-cT-5Xj"/>
@@ -177,6 +167,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="DBP-5A-riS" id="dgd-CC-eiP"/>
+                        <segue destination="YxD-ui-tW1" kind="show" identifier="FullConversationSegue" id="ivu-M6-dI5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GxG-mw-0LM" userLabel="First Responder" sceneMemberID="firstResponder"/>
