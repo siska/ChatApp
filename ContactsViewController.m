@@ -159,9 +159,25 @@
 #pragma mark TableView DataSource
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    PFUser *selectedUser = [self.contacts objectAtIndex:indexPath.row];
+{ //indexofobject
+
+    NSLog(@"INDEXPATH: %@", indexPath);
+
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *name = selectedCell.textLabel.text;
+    NSLog(@"this is the name returned: %@", name);
+    NSLog(@"Self.contacts: %@", self.contacts);
+
+    NSUInteger index = [self.contacts indexOfObjectPassingTest:^BOOL(PFUser *user, NSUInteger idx, BOOL *stop) {
+        return [user[@"Name"] isEqualToString:name];
+    }];
+
+    PFUser *selectedUser = [self.contacts objectAtIndex:index]; // indexOfObject:name];
     self.selectedUser = selectedUser;
+
+
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self performSegueWithIdentifier:@"FullConversationSegue" sender:tableView];
 }
 
