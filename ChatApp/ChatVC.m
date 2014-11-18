@@ -32,6 +32,8 @@
 
     self.placeholderImageData = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"blank_avatar"] diameter:30.0];
 
+    self.navigationItem.title = [self.selectedUser objectForKey:@"FirstName"];
+
     [self queryConversationsMessagesFromParse];
 }
 
@@ -162,7 +164,7 @@
             return nil;
         }
     }
-    return [[NSAttributedString alloc] initWithString:message.senderDisplayName];
+    return nil; //[[NSAttributedString alloc] initWithString:message.senderDisplayName];
 }
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
@@ -190,10 +192,13 @@
     {
         cell.textView.textColor = [UIColor whiteColor];
     }
+
     return cell;
 }
 
 #pragma mark - JSQMessages collection view flow layout delegate
+
+
 
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView
                    layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath

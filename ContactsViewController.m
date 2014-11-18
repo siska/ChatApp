@@ -161,9 +161,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //NSLog(@"Did hit didselectrowatindexpath");
     PFUser *selectedUser = [self.contacts objectAtIndex:indexPath.row];
-    //NSLog(@"selectedUser in didSelecteRowAtIndexPath: %@", selectedUser);
     self.selectedUser = selectedUser;
     [self performSegueWithIdentifier:@"FullConversationSegue" sender:tableView];
 }
