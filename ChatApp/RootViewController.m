@@ -31,6 +31,8 @@
         [indicator setTintColor:[UIColor blackColor]];
         [indicator startAnimating];
         [self.view addSubview:indicator];
+        [self loggedInSendFBinfoToParse];
+
     }
     else
     {
@@ -236,5 +238,11 @@
 //        [self performSegueWithIdentifier:@"FromLogIn" sender:self];
 //    }]; // Dismiss the PFSignUpViewController
 //
+
+-(IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
+{
+    [PFUser logOut];
+    NSLog(@"SUP");
+}
 
 @end

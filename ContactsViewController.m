@@ -214,10 +214,6 @@
 
 
 
--(IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
-{
-    [PFUser logOut];
-}
 
 
 
