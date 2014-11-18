@@ -24,14 +24,6 @@
 //    [self.view addSubview:loginView];
 }
 - (IBAction)FacebookLogin:(id)sender {
-
-    [self loggedInSendFBinfoToParse];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-
     if (![PFUser currentUser]) //&& ![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
     {
         NSLog(@"Sup Homie");
@@ -39,15 +31,17 @@
         [indicator setTintColor:[UIColor blackColor]];
         [indicator startAnimating];
         [self.view addSubview:indicator];
-        [self loggedInSendFBinfoToParse];
     }
     else
     {
         NSLog(@"Noodles");
 
         [self performSegueWithIdentifier:@"FromLogIn" sender:self];
+        [self loggedInSendFBinfoToParse];
+
     }
 }
+
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
     NSString *logout = [[NSString alloc]init];
@@ -55,10 +49,7 @@
 }
 
 
--(IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
-{
-    [PFUser logOut];
-}
+
 
 #pragma mark - Add Facebook Login
 
