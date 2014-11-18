@@ -17,6 +17,8 @@
 #import <Parse/Parse.h>
 #import "Conversation.h"
 
-@interface MultipeerChatViewController : JSQMessagesViewController <JSQMessagesCollectionViewDataSource, JSQMessagesCollectionViewDelegateFlowLayout>     //<JSQMessagesCollectionViewDataSource> //, JSQMessagesCollectionViewCellDelegate> //, JSQMessagesCollectionViewDelegateFlowLayout, JSQMessageBubbleImageDataSource>
+@interface MultipeerChatViewController : JSQMessagesViewController <JSQMessagesCollectionViewDataSource, JSQMessagesCollectionViewDelegateFlowLayout>
+
+
 
 @end

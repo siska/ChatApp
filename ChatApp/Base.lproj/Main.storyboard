@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone6landingpage" translatesAutoresizingMaskIntoConstraints="NO" id="CkP-IJ-kl0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageesss" translatesAutoresizingMaskIntoConstraints="NO" id="CkP-IJ-kl0">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKS-x4-6hE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2197" y="-432"/>
+            <point key="canvasLocation" x="2551" y="-380"/>
         </scene>
         <!--Contacts View Controller-->
         <scene sceneID="U5v-LU-7zT">
@@ -111,7 +111,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Multipeer" id="F0u-ew-rwN">
                             <connections>
-                                <segue destination="Wii-ep-pFX" kind="show" id="grb-IQ-Dda"/>
+                                <segue destination="I8D-V8-H7X" kind="show" id="TLL-uZ-Bmm"/>
                             </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ICg-O1-sYZ">
@@ -183,7 +183,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ekO-Ap-Yqg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ekO-Ap-Yqg">
                                 <rect key="frame" x="0.0" y="180" width="600" height="338"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -200,7 +200,7 @@
                                     <outlet property="delegate" destination="I8D-V8-H7X" id="TN1-8z-MC5"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSh-OQ-U73">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSh-OQ-U73">
                                 <rect key="frame" x="261" y="516" width="78" height="30"/>
                                 <state key="normal" title="Disconnect">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -282,6 +282,8 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="lmO-jZ-vvz"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="browseDeviceButton" destination="PjE-hX-U82" id="dXy-2s-4Fm"/>
                         <outlet property="disconnectButton" destination="cSh-OQ-U73" id="a6M-HL-bUd"/>
@@ -292,106 +294,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdr-W6-dC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2551" y="1635"/>
+            <point key="canvasLocation" x="1915" y="1015"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="KDB-AE-zF3">
+        <!--View Controller-->
+        <scene sceneID="LwK-Wg-h9p">
             <objects>
-                <viewController id="fI1-EH-p5a" customClass="ChatViewController" sceneMemberID="viewController">
+                <viewController id="jkm-hJ-Yae" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="I3f-iW-aTb"/>
-                        <viewControllerLayoutGuide type="bottom" id="8Kv-Kt-waU"/>
+                        <viewControllerLayoutGuide type="top" id="Rad-Xm-JON"/>
+                        <viewControllerLayoutGuide type="bottom" id="uPo-YP-RSG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CZF-nq-fUD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAa-ln-v77">
-                                <rect key="frame" x="538" y="507" width="36" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="iSJ-1H-QYg"/>
-                                </constraints>
-                                <state key="normal" title="Send">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendMyMSGS:" destination="fI1-EH-p5a" eventType="touchUpInside" id="3BI-fU-b2C"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47t-nv-LtK">
-                                <rect key="frame" x="16" y="83" width="568" height="410"/>
-                                <color key="backgroundColor" red="0.87878787520000001" green="0.96969699860000003" blue="0.87445890900000001" alpha="0.90588241820000004" colorSpace="deviceRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="410" id="pfm-kP-y09"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MbQ-Wr-kFN">
-                                <rect key="frame" x="16" y="507" width="514" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" red="0.874458909034729" green="0.96536797285079956" blue="0.95670998096466064" alpha="0.90588241815567017" colorSpace="deviceRGB"/>
-                        <constraints>
-                            <constraint firstItem="cAa-ln-v77" firstAttribute="leading" secondItem="MbQ-Wr-kFN" secondAttribute="trailing" constant="8" symbolic="YES" id="75u-sv-fZd"/>
-                            <constraint firstItem="cAa-ln-v77" firstAttribute="top" secondItem="MbQ-Wr-kFN" secondAttribute="top" id="Atr-x2-kym"/>
-                            <constraint firstItem="47t-nv-LtK" firstAttribute="trailing" secondItem="CZF-nq-fUD" secondAttribute="trailingMargin" id="E5M-h8-Sao"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cAa-ln-v77" secondAttribute="trailing" constant="10" id="Jud-9q-FBs"/>
-                            <constraint firstItem="MbQ-Wr-kFN" firstAttribute="top" secondItem="47t-nv-LtK" secondAttribute="bottom" constant="14" id="OGr-9n-8Ez"/>
-                            <constraint firstItem="47t-nv-LtK" firstAttribute="top" secondItem="I3f-iW-aTb" secondAttribute="bottom" constant="19" id="Ow9-Fx-qgh"/>
-                            <constraint firstItem="47t-nv-LtK" firstAttribute="leading" secondItem="CZF-nq-fUD" secondAttribute="leadingMargin" id="Xot-Ak-NHO"/>
-                            <constraint firstItem="47t-nv-LtK" firstAttribute="leading" secondItem="MbQ-Wr-kFN" secondAttribute="leading" id="xTI-BS-18p"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="zxp-dM-LRg"/>
-                    <connections>
-                        <outlet property="topConstraint" destination="Ow9-Fx-qgh" id="cCT-XN-pbO"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PIE-hO-vML" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2543" y="1021"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="lT7-QT-8sF">
-            <objects>
-                <tabBarController id="Wii-ep-pFX" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="jXX-zV-L33">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="fI1-EH-p5a" kind="relationship" relationship="viewControllers" id="g11-C1-bPO"/>
-                        <segue destination="I8D-V8-H7X" kind="relationship" relationship="viewControllers" id="Ron-S9-WEB"/>
-                        <segue destination="6Ck-IK-uzu" kind="relationship" relationship="viewControllers" id="wC6-cz-snO"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="loa-oj-SOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1845" y="1268"/>
-        </scene>
-        <!--MultipeerChat-->
-        <scene sceneID="4ry-Is-ini">
-            <objects>
-                <viewController title="MultipeerChat" id="6Ck-IK-uzu" customClass="MultipeerChatViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oEq-ky-P6x"/>
-                        <viewControllerLayoutGuide type="bottom" id="H4A-vr-vKA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QWV-Si-ENi">
+                    <view key="view" contentMode="scaleToFill" id="LCJ-R6-Pvi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="FUn-9h-d7d"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="naw-gB-V0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fn-hq-57I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1829" y="2070"/>
+            <point key="canvasLocation" x="3192" y="1635"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="KDB-AE-zF3">
+            <objects>
+                <viewController id="fI1-EH-p5a" customClass="MultipeerChatViewController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="zxp-dM-LRg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PIE-hO-vML" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2572" y="974"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="UU1-zN-nbX">
@@ -492,6 +423,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="imageesss" width="320" height="568"/>
         <image name="iphone6landingpage" width="640" height="1136"/>
     </resources>
 </document>

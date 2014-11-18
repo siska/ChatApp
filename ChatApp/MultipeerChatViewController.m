@@ -22,8 +22,6 @@
 @property JSQMessagesBubbleImage *incomingBubbleImageData;
 
 @property AppDelegate *appDelegate;
--(void)sendmyMessages;
--(void)didReceiveDataWithNotification:(NSNotification *)notification;
 
 
 @end
@@ -34,18 +32,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.messages = [[NSMutableArray alloc] init];    
     self.usersInConversation = self.appDelegate.mcManager.session.connectedPeers;
+    self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
     self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
     self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
-
     self.placeholderImageData = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"blank_avatar"] diameter:30.0];
 
-    self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
- //   [self createJSQMessagesFromConversations];
-    }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(createJSQMessagesFromConversations:)
+                                                 name:@"MCDidReceiveDataNotification"
+                                               object:nil];
+
+
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    self.view.backgroundColor = [UIColor purpleColor];
+}
 
 
 
@@ -58,10 +63,10 @@
 
 
 
+
 -(void)createJSQMessagesFromConversations:(NSNotification *)notification
 {
-    for (Conversation *chatMSGS in self.chatConvo) {
-        NSNotification *notification = [[NSNotification alloc]init];
+
         MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
         self.peerDisplayName = peerID.displayName;
 
@@ -74,7 +79,7 @@
         [self.messages addObject:message];
         [self.collectionView reloadData];
         
-    }
+
 }
 
 
@@ -222,7 +227,7 @@
     if (indexPath.item - 1 > 0)
     {
         JSQMessage *previousMessage = self.messages[indexPath.item-1];
-        if ([previousMessage.senderId isEqualToString:self.peerDisplayName])
+        if ([previousMessage.senderId isEqualToString:[PFUser currentUser].objectId])
         {
             return 0.0f;
         }
