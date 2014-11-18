@@ -111,7 +111,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Multipeer" id="F0u-ew-rwN">
                             <connections>
-                                <segue destination="I8D-V8-H7X" kind="show" id="TLL-uZ-Bmm"/>
+                                <segue destination="eIb-l5-WoU" kind="show" id="TLL-uZ-Bmm"/>
                             </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ICg-O1-sYZ">
@@ -139,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="2025" y="307"/>
         </scene>
-        <!--Item 2-->
+        <!--Connections View Controller-->
         <scene sceneID="EI4-uI-tIE">
             <objects>
                 <viewController id="I8D-V8-H7X" customClass="ConnectionsViewController" sceneMemberID="viewController">
@@ -281,8 +281,14 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="lmO-jZ-vvz"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="W38-uW-fIu">
+                        <barButtonItem key="rightBarButtonItem" title="Chat" id="zLI-u4-YmQ">
+                            <connections>
+                                <segue destination="fI1-EH-p5a" kind="show" id="X6w-Xq-P1F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="browseDeviceButton" destination="PjE-hX-U82" id="dXy-2s-4Fm"/>
@@ -294,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdr-W6-dC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1915" y="1015"/>
+            <point key="canvasLocation" x="2727" y="1015"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="LwK-Wg-h9p">
@@ -312,17 +318,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fn-hq-57I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3192" y="1635"/>
+            <point key="canvasLocation" x="4816" y="1635"/>
         </scene>
-        <!--Item 1-->
+        <!--Multipeer Chat View Controller-->
         <scene sceneID="KDB-AE-zF3">
             <objects>
                 <viewController id="fI1-EH-p5a" customClass="MultipeerChatViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="zxp-dM-LRg"/>
+                    <navigationItem key="navigationItem" id="QEn-5J-yvz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIE-hO-vML" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2551" y="1015"/>
+            <point key="canvasLocation" x="3401" y="1025"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="UU1-zN-nbX">
@@ -420,6 +426,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGj-oZ-Lfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1059" y="307"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="kmY-3G-adx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eIb-l5-WoU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 2" id="lmO-jZ-vvz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XIM-Eh-oOd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="I8D-V8-H7X" kind="relationship" relationship="rootViewController" id="ZEw-Et-fc8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fH9-bY-3qv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1915" y="1015"/>
         </scene>
     </scenes>
     <resources>
