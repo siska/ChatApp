@@ -64,9 +64,33 @@
         JSQMessage *message = [[JSQMessage alloc] initWithSenderId:conversation.senderId senderDisplayName:conversation.senderDisplayName date:conversation.date text:conversation.text];
 
         [self.messages addObject:message];
-        [self.collectionView reloadData];
+    }
+
+    [self.collectionView reloadData];
+
+    if (self.messages.count > 9)
+    {
+        // delay offset change by a tiny amount, or it doesn't work
+        // max added the above comment and set this up so that when the messages are loaded or when they are reloaded, the collection view automatically scrolls to the bottom - he also moved it out of the for loop - we don't want to reload it every time
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            CGFloat y = self.collectionView.contentSize.height;
+            y -= self.collectionView.bounds.size.height;
+            y += self.collectionView.contentInset.bottom;
+            [self.collectionView setContentOffset:CGPointMake(0, y) animated:YES];
+        }];
     }
 }
+
+/*[self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:items - 1 inSection:0]
+ atScrollPosition:UICollectionViewScrollPositionTop
+ animated:animated];   */
+
+//[self scrollToBottomAnimated:YES];
+
+
+//[self.collectionView setContentOffset:CGPointMake(0, 300)];
+
+//         [self automaticallyScrollsToMostRecentMessage];
 
 
 //where is the senderID, name, etc coming from?

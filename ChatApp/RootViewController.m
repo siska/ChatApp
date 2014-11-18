@@ -51,10 +51,11 @@
 }
 
 
-//-(IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
-//{
-//    [PFUser logOut];
-//}
+-(IBAction)unwindFromLogOut:(UIStoryboardSegue *)sender
+{
+    [PFUser logOut];
+}
+
 #pragma mark - Add Facebook Login
 
 - (void)loggedInSendFBinfoToParse{
