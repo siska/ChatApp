@@ -39,6 +39,7 @@
 		1241BA571A0AD109003BD083 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA561A0AD109003BD083 /* MessageViewController.m */; };
 		1241BA5A1A0BDC7D003BD083 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA591A0BDC7D003BD083 /* Message.m */; };
 		1AFEB7F1415A990E72FC2B99 /* libPods-ChatApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */; };
+		CE5D2D721A1AD73300F96604 /* MultipeerChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5D2D711A1AD73300F96604 /* MultipeerChatViewController.m */; };
 		CEC91AD11A13ED5300F82570 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91ACE1A13ED5300F82570 /* Parse.framework */; };
 		CEC91AD21A13ED5300F82570 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */; };
 		CEC91AD31A13ED5300F82570 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91AD01A13ED5300F82570 /* ParseUI.framework */; };
@@ -107,6 +108,8 @@
 		1241BA591A0BDC7D003BD083 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		32286F06E8E3FC535EDC17FD /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChatApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5D2D701A1AD73300F96604 /* MultipeerChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerChatViewController.h; sourceTree = "<group>"; };
+		CE5D2D711A1AD73300F96604 /* MultipeerChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerChatViewController.m; sourceTree = "<group>"; };
 		CEC91ACC1A13ED3200F82570 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		CEC91ACE1A13ED5300F82570 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Documents/Parse.framework; sourceTree = "<group>"; };
 		CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ../../Documents/ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				1241BA4C1A09B8FE003BD083 /* ContactsViewController.m */,
 				123DBA2B1A12C60C0098DC3B /* ChatVC.h */,
 				123DBA2C1A12C60C0098DC3B /* ChatVC.m */,
+				CE5D2D701A1AD73300F96604 /* MultipeerChatViewController.h */,
+				CE5D2D711A1AD73300F96604 /* MultipeerChatViewController.m */,
 				1241BA551A0AD109003BD083 /* MessageViewController.h */,
 				1241BA561A0AD109003BD083 /* MessageViewController.m */,
 				123DBA1B1A1159EF0098DC3B /* ChatViewController.h */,
@@ -413,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5D2D721A1AD73300F96604 /* MultipeerChatViewController.m in Sources */,
 				123DBA2D1A12C60C0098DC3B /* ChatVC.m in Sources */,
 				1241BA0C1A09AAC6003BD083 /* ChatApp.xcdatamodeld in Sources */,
 				1241BA5A1A0BDC7D003BD083 /* Message.m in Sources */,

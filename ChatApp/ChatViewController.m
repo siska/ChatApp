@@ -108,7 +108,7 @@
     [UIView animateWithDuration:0.3f animations:^ {
         self.view.frame = CGRectMake(0, -(keyboardFrameBeginRect.size.height - 50), self.view.frame.size.width, self.view.frame.size.height);
 
-        self.topConstraint.constant = (keyboardFrameBeginRect.size.height - 10);
+        self.topConstraint.constant = (keyboardFrameBeginRect.size.height - 30);
 
 
     }];
@@ -119,7 +119,7 @@
 
         self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         
-        self.topConstraint.constant = 17;
+       // self.topConstraint.constant = 17;
     }];
 }
 

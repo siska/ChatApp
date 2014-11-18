@@ -88,7 +88,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oda-o0-rv1" id="azz-RH-XZt">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.874458909034729" green="0.96536797285079956" blue="0.95670998096466064" alpha="0.90588241815567017" colorSpace="deviceRGB"/>
+                                            <color key="backgroundColor" red="0.874458909034729" green="0.96536797285079956" blue="0.95670998096466064" alpha="0.47999999999999998" colorSpace="deviceRGB"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.874458909034729" green="0.96536797285079956" blue="0.95670998096466064" alpha="0.90588241815567017" colorSpace="deviceRGB"/>
                                     </tableViewCell>
@@ -306,47 +306,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5X-6Z-29D">
-                                <rect key="frame" x="238" y="293" width="97" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAa-ln-v77">
+                                <rect key="frame" x="538" y="507" width="36" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="2PR-K4-Orb"/>
+                                    <constraint firstAttribute="width" constant="36" id="iSJ-1H-QYg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="delegate" destination="fI1-EH-p5a" id="Ntt-6q-SnT"/>
+                                    <action selector="sendMyMSGS:" destination="fI1-EH-p5a" eventType="touchUpInside" id="3BI-fU-b2C"/>
                                 </connections>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jr6-8p-0Qq">
-                                <rect key="frame" x="180" y="96" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47t-nv-LtK">
+                                <rect key="frame" x="16" y="83" width="568" height="410"/>
+                                <color key="backgroundColor" red="0.87878787520000001" green="0.96969699860000003" blue="0.87445890900000001" alpha="0.90588241820000004" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="8Ym-Jz-cZa"/>
-                                    <constraint firstAttribute="width" constant="240" id="s4t-rW-5o5"/>
+                                    <constraint firstAttribute="height" constant="410" id="pfm-kP-y09"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MbQ-Wr-kFN">
+                                <rect key="frame" x="16" y="507" width="514" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.874458909034729" green="0.96536797285079956" blue="0.95670998096466064" alpha="0.90588241815567017" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="jr6-8p-0Qq" firstAttribute="top" secondItem="I3f-iW-aTb" secondAttribute="bottom" constant="32" id="R5n-Q0-y5H"/>
-                            <constraint firstItem="L5X-6Z-29D" firstAttribute="leading" secondItem="CZF-nq-fUD" secondAttribute="leading" constant="238" id="TZK-ug-uwP"/>
-                            <constraint firstItem="L5X-6Z-29D" firstAttribute="top" secondItem="jr6-8p-0Qq" secondAttribute="bottom" constant="69" id="eUR-z0-lSa"/>
-                            <constraint firstItem="jr6-8p-0Qq" firstAttribute="centerX" secondItem="CZF-nq-fUD" secondAttribute="centerX" id="w0p-NI-vNL"/>
+                            <constraint firstItem="cAa-ln-v77" firstAttribute="leading" secondItem="MbQ-Wr-kFN" secondAttribute="trailing" constant="8" symbolic="YES" id="75u-sv-fZd"/>
+                            <constraint firstItem="cAa-ln-v77" firstAttribute="top" secondItem="MbQ-Wr-kFN" secondAttribute="top" id="Atr-x2-kym"/>
+                            <constraint firstItem="47t-nv-LtK" firstAttribute="trailing" secondItem="CZF-nq-fUD" secondAttribute="trailingMargin" id="E5M-h8-Sao"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cAa-ln-v77" secondAttribute="trailing" constant="10" id="Jud-9q-FBs"/>
+                            <constraint firstItem="MbQ-Wr-kFN" firstAttribute="top" secondItem="47t-nv-LtK" secondAttribute="bottom" constant="14" id="OGr-9n-8Ez"/>
+                            <constraint firstItem="47t-nv-LtK" firstAttribute="top" secondItem="I3f-iW-aTb" secondAttribute="bottom" constant="19" id="Ow9-Fx-qgh"/>
+                            <constraint firstItem="47t-nv-LtK" firstAttribute="leading" secondItem="CZF-nq-fUD" secondAttribute="leadingMargin" id="Xot-Ak-NHO"/>
+                            <constraint firstItem="47t-nv-LtK" firstAttribute="leading" secondItem="MbQ-Wr-kFN" secondAttribute="leading" id="xTI-BS-18p"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="zxp-dM-LRg"/>
                     <connections>
-                        <outlet property="chatTextField" destination="L5X-6Z-29D" id="9FV-Cb-SMf"/>
-                        <outlet property="chatWindowTextView" destination="jr6-8p-0Qq" id="tyX-d8-n6f"/>
-                        <outlet property="topConstraint" destination="R5n-Q0-y5H" id="lQp-Sj-qyb"/>
+                        <outlet property="topConstraint" destination="Ow9-Fx-qgh" id="cCT-XN-pbO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIE-hO-vML" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2551" y="973"/>
+            <point key="canvasLocation" x="2543" y="1021"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lT7-QT-8sF">
@@ -361,11 +367,31 @@
                     <connections>
                         <segue destination="fI1-EH-p5a" kind="relationship" relationship="viewControllers" id="g11-C1-bPO"/>
                         <segue destination="I8D-V8-H7X" kind="relationship" relationship="viewControllers" id="Ron-S9-WEB"/>
+                        <segue destination="6Ck-IK-uzu" kind="relationship" relationship="viewControllers" id="wC6-cz-snO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="loa-oj-SOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1845" y="1268"/>
+        </scene>
+        <!--MultipeerChat-->
+        <scene sceneID="4ry-Is-ini">
+            <objects>
+                <viewController title="MultipeerChat" id="6Ck-IK-uzu" customClass="MultipeerChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oEq-ky-P6x"/>
+                        <viewControllerLayoutGuide type="bottom" id="H4A-vr-vKA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QWV-Si-ENi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="FUn-9h-d7d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="naw-gB-V0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1829" y="2070"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="UU1-zN-nbX">

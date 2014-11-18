@@ -19,10 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIImage *backgroundImage = [UIImage imageNamed:@"iphone6pluslandingpage.png"];
-    UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
-    backgroundImageView.image=backgroundImage;
-    [self.view insertSubview:backgroundImageView atIndex:0];
     FBLoginView *loginView = [[FBLoginView alloc] initWithFrame:self.view.bounds];
     loginView.center = self.view.center;
     [self.view addSubview:loginView];
