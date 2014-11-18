@@ -163,6 +163,7 @@
 {
     PFUser *selectedUser = [self.contacts objectAtIndex:indexPath.row];
     self.selectedUser = selectedUser;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self performSegueWithIdentifier:@"FullConversationSegue" sender:tableView];
 }
 
