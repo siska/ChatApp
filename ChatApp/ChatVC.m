@@ -36,7 +36,7 @@
     self.navigationItem.title = [self.selectedUser objectForKey:@"FirstName"];
 
     [self queryConversationsMessagesFromParse];
-    [self subscribeToPushChannels];
+//    [self subscribeToPushChannels];
 }
 
 -(void)queryConversationsMessagesFromParse
@@ -292,44 +292,77 @@
     NSLog(@"didTapCellAtIndexPath %@", NSStringFromCGPoint(touchLocation));
 }
 
--(void)subscribeToPushChannels{
-    
-//    PFQuery *userQuery  = [PFUser query];
-    PFQuery *recieverOfMessage = [PFQuery queryWithClassName:@"Conversation"];
-    [recieverOfMessage whereKey:@"recieverID" equalTo:[PFUser currentUser]];
-    [recieverOfMessage orderByDescending:@"createdAt"];
-
-
-    [recieverOfMessage findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-     {
-         if (error) {
-             NSLog(@"Error: %@", error.userInfo);
-         }
-         else
-         {
-           //  Conversation *messagePush = [objects objectAtIndex:0];
-            // NSLog(@"hiiii %@", messagePush);
-             NSString *channelName = [NSString stringWithFormat:@"@%",recieverOfMessage];
-             PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-             [currentInstallation addUniqueObject:channelName forKey:@"channels"];
-             [currentInstallation saveInBackground];
-
-         }
-
-     }];
-}
+//-(void)subscribeToPushChannels{
+////
+// //   PFQuery *pushQuery = [PFInstallation query];
+////    [pushQuery whereKey:@"channels" equalTo:[PFUser user]]; // Set channel
+////    [pushQuery whereKey:@"scores" equalTo:YES];
+//
+////    PFQuery *userQuery  = [PFUser query];
+//    PFQuery *recieverOfMessage = [PFQuery queryWithClassName:@"Conversation"];
+//    [recieverOfMessage whereKey:@"recieverID" equalTo:[PFUser currentUser]];
+//    [recieverOfMessage orderByDescending:@"createdAt"];
+//
+//
+//    [recieverOfMessage findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+//     {
+//         if (error) {
+//             NSLog(@"Error: %@", error.userInfo);
+//         }
+//         else
+//         {
+//           //  Conversation *messagePush = [objects objectAtIndex:0];
+//            // NSLog(@"hiiii %@", messagePush);
+//             NSString *channelName = [NSString stringWithFormat:@"%@", recieverOfMessage];
+//             PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+//             [currentInstallation addUniqueObject:channelName forKey:@"channels"];
+//             [currentInstallation saveInBackground];
+//
+//         }
+//
+//     }];
+//}
 -(void) sendPushNotifications{
-//    PFQuery *pushQuery = [PFInstallation query];
-    PFPush *push = [[PFPush alloc] init];
-    Conversation *friend = [[Conversation alloc] init];
-    NSString *friendName = friend.senderDisplayName;
-    PFUser *reciever = [PFUser currentUser];
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"channels" equalTo:[PFUser user]];
 
-    NSString *channelName = [NSString stringWithFormat:@"%@", reciever];
-    [push setChannel:channelName];
+    PFQuery *recieverOfMessage = [PFQuery queryWithClassName:@"Conversation"];
+        [recieverOfMessage whereKey:@"receiverID" equalTo:[PFUser currentUser]];
+    
+    
+        [recieverOfMessage findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+         {
+             if (error) {
+                 NSLog(@"Error: %@", error.userInfo);
 
-    [push setMessage:[NSString stringWithFormat:@"You have a message from %@", friendName]];
-    [push sendPushInBackground];
+
+             }
+             else
+             {
+
+                 Conversation *conversationJustSent = [objects objectAtIndex:0];
+                 NSString *channelName = conversationJustSent.objectId;
+                 PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+                 [currentInstallation addUniqueObject:channelName forKey:@"channels"];
+                 [currentInstallation saveInBackground];
+
+
+                 PFPush *push = [[PFPush alloc] init];
+                 [push setChannel:@"channel"];
+                 NSString *friendName = conversationJustSent.senderDisplayName;
+                 NSString *messageString = [NSString stringWithFormat:@"You have a message from %@!", friendName];
+
+                 [push setMessage:messageString];
+                 [push sendPushInBackground];
+
+
+    
+             }
+    
+         }];
+
+
+
 }
 
 @end
