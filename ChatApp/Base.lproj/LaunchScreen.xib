@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -11,24 +11,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2014 Vi &amp; Ryan. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
+                    <rect key="frame" x="20" y="439" width="441" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="imageesss" translatesAutoresizingMaskIntoConstraints="NO" id="FCn-sz-A3f">
-                    <rect key="frame" x="0.0" y="-6" width="490" height="498"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="chat51-2" translatesAutoresizingMaskIntoConstraints="NO" id="oZJ-wg-Kra">
+                    <rect key="frame" x="165" y="165" width="150" height="150"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ChatApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAl-7c-kJ7">
+                    <rect key="frame" x="149" y="100" width="182" height="57"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.73725491759999995" green="0.2196078598" blue="0.12549020350000001" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="FCn-sz-A3f" secondAttribute="bottom" id="1ua-01-xhr"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstItem="FCn-sz-A3f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Poo-L3-DBu"/>
-                <constraint firstItem="FCn-sz-A3f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SzS-eO-Jne"/>
-                <constraint firstAttribute="trailing" secondItem="FCn-sz-A3f" secondAttribute="trailing" id="VmK-ym-OBJ"/>
+                <constraint firstAttribute="centerX" secondItem="vAl-7c-kJ7" secondAttribute="centerX" id="RjT-4L-ubW"/>
+                <constraint firstAttribute="centerY" secondItem="oZJ-wg-Kra" secondAttribute="centerY" id="Rjo-M5-NXS"/>
+                <constraint firstItem="oZJ-wg-Kra" firstAttribute="top" secondItem="vAl-7c-kJ7" secondAttribute="bottom" constant="8" id="XCh-JU-t6Z"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstAttribute="centerX" secondItem="oZJ-wg-Kra" secondAttribute="centerX" id="kxS-Hu-v7y"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -36,6 +42,6 @@
         </view>
     </objects>
     <resources>
-        <image name="imageesss" width="320" height="568"/>
+        <image name="chat51-2" width="512" height="512"/>
     </resources>
 </document>

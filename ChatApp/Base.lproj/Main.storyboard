@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,9 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageesss" translatesAutoresizingMaskIntoConstraints="NO" id="CkP-IJ-kl0">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlG-tz-d9a">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="facebook-login-button-002">
@@ -29,40 +26,32 @@
                                     <action selector="FacebookLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZPu-Xk-U1U"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk to people. Just do it. " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOg-dj-uhA">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="19"/>
-                                <color key="textColor" red="0.043137256056070328" green="0.019607843831181526" blue="0.066666670143604279" alpha="1" colorSpace="deviceRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="chat51-2" translatesAutoresizingMaskIntoConstraints="NO" id="Jy6-aF-jlg">
+                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ChatApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ab-Yd-Z7J">
+                                <rect key="frame" x="203" y="150" width="194" height="67"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.73725491759999995" green="0.2196078598" blue="0.12549020350000001" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="TOg-dj-uhA" firstAttribute="centerX" secondItem="FlG-tz-d9a" secondAttribute="centerX" id="6Gb-pY-Hb4">
-                                <variation key="widthClass=compact" constant="6.5"/>
-                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="Jy6-aF-jlg" secondAttribute="centerX" id="C4x-nz-gCK"/>
+                            <constraint firstItem="Jy6-aF-jlg" firstAttribute="top" secondItem="5Ab-Yd-Z7J" secondAttribute="bottom" constant="8" id="D8i-Nd-38R"/>
+                            <constraint firstAttribute="centerY" secondItem="Jy6-aF-jlg" secondAttribute="centerY" id="IcI-cI-XGg"/>
                             <constraint firstAttribute="centerY" secondItem="FlG-tz-d9a" secondAttribute="centerY" id="IpA-NJ-Wkf">
                                 <variation key="widthClass=compact" constant="-125"/>
                             </constraint>
-                            <constraint firstItem="TOg-dj-uhA" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="148" id="QFe-hw-CFh">
-                                <variation key="widthClass=compact" constant="156"/>
-                            </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="CkP-IJ-kl0" secondAttribute="trailing" constant="-16" id="XXf-9x-emd"/>
+                            <constraint firstAttribute="centerX" secondItem="5Ab-Yd-Z7J" secondAttribute="centerX" id="WEp-gw-9b8"/>
                             <constraint firstAttribute="centerX" secondItem="FlG-tz-d9a" secondAttribute="centerX" id="a2S-GY-odD"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="CkP-IJ-kl0" secondAttribute="bottom" id="gQy-ZX-gMe"/>
-                            <constraint firstItem="CkP-IJ-kl0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="jhG-qQ-Loj"/>
-                            <constraint firstItem="CkP-IJ-kl0" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="l7G-0G-sYr"/>
-                            <constraint firstAttribute="centerX" secondItem="CkP-IJ-kl0" secondAttribute="centerX" id="lNk-Db-0aU"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="FlG-tz-d9a"/>
-                                <exclude reference="TOg-dj-uhA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="lNk-Db-0aU"/>
-                                <exclude reference="6Gb-pY-Hb4"/>
-                                <exclude reference="QFe-hw-CFh"/>
                                 <exclude reference="IpA-NJ-Wkf"/>
                                 <exclude reference="a2S-GY-odD"/>
                             </mask>
@@ -70,12 +59,8 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="FlG-tz-d9a"/>
-                                <include reference="TOg-dj-uhA"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="lNk-Db-0aU"/>
-                                <include reference="6Gb-pY-Hb4"/>
-                                <include reference="QFe-hw-CFh"/>
                                 <include reference="IpA-NJ-Wkf"/>
                                 <include reference="a2S-GY-odD"/>
                             </mask>
@@ -87,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="229.5" y="330"/>
+            <point key="canvasLocation" x="229" y="330"/>
         </scene>
         <!--ChatVC-->
         <scene sceneID="Hxl-Fa-SjU">
@@ -100,18 +85,7 @@
                     <view key="view" contentMode="scaleToFill" id="qlS-63-oWZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone6landingpage" translatesAutoresizingMaskIntoConstraints="NO" id="9ik-dm-l4J">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="9ik-dm-l4J" firstAttribute="leading" secondItem="qlS-63-oWZ" secondAttribute="leadingMargin" constant="-16" id="QQN-RR-hxM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9ik-dm-l4J" secondAttribute="trailing" constant="-16" id="bWH-iP-RFD"/>
-                            <constraint firstItem="9ik-dm-l4J" firstAttribute="top" secondItem="qlS-63-oWZ" secondAttribute="topMargin" id="mUx-fI-OWL"/>
-                            <constraint firstItem="Na7-ga-OYt" firstAttribute="top" secondItem="9ik-dm-l4J" secondAttribute="bottom" id="nQc-0d-XL7"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKS-x4-6hE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -493,8 +467,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chat51-2" width="170" height="170"/>
         <image name="facebook-login-button-002" width="270" height="58"/>
-        <image name="imageesss" width="320" height="568"/>
         <image name="iphone6landingpage" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
