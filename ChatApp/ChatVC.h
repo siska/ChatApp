@@ -16,7 +16,6 @@
 #import "JSQMessagesAvatarImageFactory.h"
 #import <Parse/Parse.h>
 #import "Conversation.h"
-#import "PushNotifcations.h"
 
 @interface ChatVC : JSQMessagesViewController <JSQMessagesCollectionViewDataSource, JSQMessagesCollectionViewDelegateFlowLayout>     //<JSQMessagesCollectionViewDataSource> //, JSQMessagesCollectionViewCellDelegate> //, JSQMessagesCollectionViewDelegateFlowLayout, JSQMessageBubbleImageDataSource>
 

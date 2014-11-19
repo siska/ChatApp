@@ -8,6 +8,7 @@
 
 #import "ChatVC.h"
 
+
 @interface ChatVC ()
 @property NSArray *usersInConversation;
 @property NSArray *conversationsFromParse;
@@ -35,6 +36,7 @@
     self.navigationItem.title = [self.selectedUser objectForKey:@"FirstName"];
 
     [self queryConversationsMessagesFromParse];
+    [self subscribeToPushChannels];
 }
 
 -(void)queryConversationsMessagesFromParse
@@ -54,6 +56,8 @@
          }
          //NSLog(@"queryCurrentUserMessagesFromParse returned: %@", self.conversationsFromParse);
          [self createJSQMessagesFromConversations];
+
+        
      }];
 }
 
@@ -118,7 +122,9 @@
             textView.text = nil;
             [textView.undoManager removeAllActions];
             [self queryConversationsMessagesFromParse];
-            [PushNotifcations sendPushWhenMessageRecieved];
+            [self sendPushNotifications];
+
+           
         }
     }];
 }
@@ -286,5 +292,44 @@
     NSLog(@"didTapCellAtIndexPath %@", NSStringFromCGPoint(touchLocation));
 }
 
+-(void)subscribeToPushChannels{
+    
+//    PFQuery *userQuery  = [PFUser query];
+    PFQuery *recieverOfMessage = [PFQuery queryWithClassName:@"Conversation"];
+    [recieverOfMessage whereKey:@"recieverID" equalTo:[PFUser currentUser]];
+    [recieverOfMessage orderByDescending:@"createdAt"];
+
+
+    [recieverOfMessage findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         if (error) {
+             NSLog(@"Error: %@", error.userInfo);
+         }
+         else
+         {
+           //  Conversation *messagePush = [objects objectAtIndex:0];
+            // NSLog(@"hiiii %@", messagePush);
+             NSString *channelName = [NSString stringWithFormat:@"@%",recieverOfMessage];
+             PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+             [currentInstallation addUniqueObject:channelName forKey:@"channels"];
+             [currentInstallation saveInBackground];
+
+         }
+
+     }];
+}
+-(void) sendPushNotifications{
+//    PFQuery *pushQuery = [PFInstallation query];
+    PFPush *push = [[PFPush alloc] init];
+    Conversation *friend = [[Conversation alloc] init];
+    NSString *friendName = friend.senderDisplayName;
+    PFUser *reciever = [PFUser currentUser];
+
+    NSString *channelName = [NSString stringWithFormat:@"%@", reciever];
+    [push setChannel:channelName];
+
+    [push setMessage:[NSString stringWithFormat:@"You have a message from %@", friendName]];
+    [push sendPushInBackground];
+}
 
 @end
