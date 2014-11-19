@@ -10,12 +10,9 @@
 #import "AppDelegate.h"
 
 @interface ConnectionsViewController () <UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *textName;
-@property (weak, nonatomic) IBOutlet UISwitch *switchToggle;
-@property (weak, nonatomic) IBOutlet UIButton *browseDeviceButton;
-@property (weak, nonatomic) IBOutlet UIButton *disconnectButton;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableViewConnectedDevices;
+
+
 
 
 @property NSMutableArray *connectedDevicesArray;
@@ -34,7 +31,7 @@
     [[self.appDelegate mcManager]setupPeerAndSessionWithDisplayName:[UIDevice currentDevice].name];
     [[self.appDelegate mcManager]advertiseSelf:self.switchToggle.isOn];
 
-    self.textName.delegate = self;
+    [self.textName setDelegate:self];
     [self.tableViewConnectedDevices setDelegate:self];
     [self.tableViewConnectedDevices setDataSource:self];
 
@@ -42,17 +39,8 @@
 }
 
 
-#
-- (IBAction)browseDevicePressed:(id)sender {
-    [[self.appDelegate mcManager]setupMCBrowser];
-    [[[self.appDelegate mcManager]browser]setDelegate:self];
-    [self presentViewController:[[self.appDelegate mcManager]browser]animated:YES completion:nil];
-
-}
-- (IBAction)switchToggleVisibility:(id)sender {
-    [self.appDelegate.mcManager advertiseSelf:self.switchToggle.isOn];
-}
--(BOOL)textViewShouldEndEditing:(UITextView *)textView{
+#pragma mark - textfield delegate method
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [self.textName resignFirstResponder];
     self.appDelegate.mcManager.peerID = nil;
     self.appDelegate.mcManager.session = nil;
@@ -67,9 +55,30 @@
     [self.appDelegate.mcManager setupPeerAndSessionWithDisplayName:self.textName.text];
     [self.appDelegate.mcManager setupMCBrowser];
     [self.appDelegate.mcManager advertiseSelf:self.switchToggle.isOn];
+    
 
     return YES;
 }
+
+#pragma mark - broadcast method
+
+- (IBAction)browseDevicePressed:(id)sender {
+    [[self.appDelegate mcManager]setupMCBrowser];
+    [[[self.appDelegate mcManager]browser]setDelegate:self];
+    [self presentViewController:[[self.appDelegate mcManager]browser]animated:YES completion:nil];
+
+}
+- (IBAction)switchToggleVisibility:(id)sender {
+    [self.appDelegate.mcManager advertiseSelf:self.switchToggle.isOn];
+
+}
+- (IBAction)disconnectOnButtonPressed:(id)sender {
+    [self.appDelegate.mcManager.session disconnect];
+    self.textName.enabled = YES;
+    [self.connectedDevicesArray removeAllObjects];
+    [self.tableViewConnectedDevices reloadData];
+}
+
 
 #pragma browser finished and canceled
 -(void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController{
@@ -104,7 +113,7 @@
     MCSessionState state = [[[notification userInfo] objectForKey:@"state"] intValue];
     if (state != MCSessionStateConnected) {
         [self.connectedDevicesArray addObject:peerDisplayName];
-    }else if(state == MCSessionStateNotConnected){
+    } else if(state == MCSessionStateNotConnected){
         if (self.connectedDevicesArray > 0) {
             NSUInteger indexOfDevices = [self.connectedDevicesArray indexOfObject:peerDisplayName];
             [self.connectedDevicesArray removeObjectAtIndex:indexOfDevices];
@@ -121,12 +130,6 @@
     }
 }
 
-#pragma disconnect device
-- (IBAction)disconnectOnButtonPressed:(id)sender {
-    [self.appDelegate.mcManager.session disconnect];
-    self.textName.enabled = YES;
-    [self.connectedDevicesArray removeAllObjects];
-    [self.tableViewConnectedDevices reloadData];
-}
+
 
 @end

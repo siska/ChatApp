@@ -101,7 +101,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone6landingpage" translatesAutoresizingMaskIntoConstraints="NO" id="9ik-dm-l4J">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iphone6landingpage" translatesAutoresizingMaskIntoConstraints="NO" id="9ik-dm-l4J">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                             </imageView>
                         </subviews>
@@ -130,7 +130,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DBP-5A-riS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DBP-5A-riS">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <color key="backgroundColor" red="0.87878787517547607" green="0.96969699859619141" blue="0.874458909034729" alpha="0.90588241815567017" colorSpace="deviceRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -140,14 +140,11 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oda-o0-rv1" id="azz-RH-XZt">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.874458909034729" green="0.96536797285079956" blue="0.95670998096466064" alpha="0.47999999999999998" colorSpace="deviceRGB"/>
+                                            <color key="backgroundColor" red="0.99607849120000003" green="0.98431378599999997" blue="0.98431378599999997" alpha="1" colorSpace="deviceRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.874458909034729" green="0.96536797285079956" blue="0.95670998096466064" alpha="0.90588241815567017" colorSpace="deviceRGB"/>
+                                        <color key="backgroundColor" red="0.9960784912109375" green="0.98431378602981567" blue="0.98431378602981567" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="556"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="bG7-RC-WbE" id="m9h-Ix-qGa"/>
                                     <outlet property="delegate" destination="bG7-RC-WbE" id="qTQ-gm-cDQ"/>
@@ -158,7 +155,9 @@
                         <constraints>
                             <constraint firstItem="DBP-5A-riS" firstAttribute="leading" secondItem="qRT-7h-qHv" secondAttribute="leading" id="CkE-J0-awU"/>
                             <constraint firstAttribute="trailing" secondItem="DBP-5A-riS" secondAttribute="trailing" id="Nth-SE-jR5"/>
-                            <constraint firstItem="cpJ-me-O7d" firstAttribute="top" secondItem="DBP-5A-riS" secondAttribute="bottom" id="m35-5Y-WG2"/>
+                            <constraint firstItem="cpJ-me-O7d" firstAttribute="top" secondItem="DBP-5A-riS" secondAttribute="bottom" id="m35-5Y-WG2">
+                                <variation key="widthClass=compact" constant="-44"/>
+                            </constraint>
                             <constraint firstItem="DBP-5A-riS" firstAttribute="top" secondItem="qRT-7h-qHv" secondAttribute="top" id="orZ-pY-BPO"/>
                         </constraints>
                     </view>
@@ -212,6 +211,7 @@
                                 <rect key="frame" x="535" y="110" width="51" height="31"/>
                                 <connections>
                                     <action selector="switchToggleVisibility:" destination="I8D-V8-H7X" eventType="valueChanged" id="45f-Lf-i5Y"/>
+                                    <action selector="toggleVisibility:" destination="I8D-V8-H7X" eventType="valueChanged" id="Fv7-Jf-rr3"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjE-hX-U82">
@@ -221,6 +221,7 @@
                                 </state>
                                 <connections>
                                     <action selector="browseDevicePressed:" destination="I8D-V8-H7X" eventType="touchUpInside" id="pFa-Jo-Wht"/>
+                                    <action selector="browseForDevices:" destination="I8D-V8-H7X" eventType="touchUpInside" id="ho9-Fe-x6X"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visible to other devices?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KS-Gh-ug7">
@@ -252,6 +253,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="disconnect:" destination="I8D-V8-H7X" eventType="touchUpInside" id="0M5-yO-3ey"/>
                                     <action selector="disconnectOnButtonPressed:" destination="I8D-V8-H7X" eventType="touchUpInside" id="JVX-of-V3a"/>
                                 </connections>
                             </button>
@@ -496,6 +498,6 @@
         <image name="iphone6landingpage" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="csS-6a-7cm"/>
+        <segue reference="exl-TV-aeG"/>
     </inferredMetricsTieBreakers>
 </document>

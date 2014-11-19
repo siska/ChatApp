@@ -39,6 +39,7 @@
 		1241BA5A1A0BDC7D003BD083 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 1241BA591A0BDC7D003BD083 /* Message.m */; };
 		1AFEB7F1415A990E72FC2B99 /* libPods-ChatApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */; };
 		CE5D2D721A1AD73300F96604 /* MultipeerChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5D2D711A1AD73300F96604 /* MultipeerChatViewController.m */; };
+		CE713E1E1A1C5B1000F2D727 /* PushNotifcations.m in Sources */ = {isa = PBXBuildFile; fileRef = CE713E1D1A1C5B1000F2D727 /* PushNotifcations.m */; };
 		CEC91AD11A13ED5300F82570 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91ACE1A13ED5300F82570 /* Parse.framework */; };
 		CEC91AD21A13ED5300F82570 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */; };
 		CEC91AD31A13ED5300F82570 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC91AD01A13ED5300F82570 /* ParseUI.framework */; };
@@ -107,6 +108,8 @@
 		A3E5A3F62E84A826A899D859 /* libPods-ChatApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChatApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5D2D701A1AD73300F96604 /* MultipeerChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerChatViewController.h; sourceTree = "<group>"; };
 		CE5D2D711A1AD73300F96604 /* MultipeerChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerChatViewController.m; sourceTree = "<group>"; };
+		CE713E1C1A1C5B1000F2D727 /* PushNotifcations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotifcations.h; sourceTree = "<group>"; };
+		CE713E1D1A1C5B1000F2D727 /* PushNotifcations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotifcations.m; sourceTree = "<group>"; };
 		CEC91ACC1A13ED3200F82570 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		CEC91ACE1A13ED5300F82570 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Documents/Parse.framework; sourceTree = "<group>"; };
 		CEC91ACF1A13ED5300F82570 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ../../Documents/ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 		1241BA511A0A7CCB003BD083 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE713E1C1A1C5B1000F2D727 /* PushNotifcations.h */,
+				CE713E1D1A1C5B1000F2D727 /* PushNotifcations.m */,
 				1241BA521A0A7D3A003BD083 /* Friend.h */,
 				1241BA531A0A7D3A003BD083 /* Friend.m */,
 				123DBA341A13D56E0098DC3B /* Conversation.h */,
@@ -421,6 +426,7 @@
 				1241BA091A09AAC6003BD083 /* AppDelegate.m in Sources */,
 				123DBA361A13D56E0098DC3B /* Conversation.m in Sources */,
 				1241BA4D1A09B8FE003BD083 /* ContactsViewController.m in Sources */,
+				CE713E1E1A1C5B1000F2D727 /* PushNotifcations.m in Sources */,
 				123DBA1A1A1159170098DC3B /* MCManager.m in Sources */,
 				123DBA201A115AFB0098DC3B /* ConnectionsViewController.m in Sources */,
 				1241BA0F1A09AAC6003BD083 /* RootViewController.m in Sources */,
@@ -484,8 +490,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: vi tran (FBA3YYHYLL)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: vi tran (UM883JTL5Y)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -505,7 +511,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "69418d9a-63da-4364-a3fd-bf5608e98535";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -527,8 +533,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: vi tran (FBA3YYHYLL)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: vi tran (UM883JTL5Y)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -541,7 +547,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "69418d9a-63da-4364-a3fd-bf5608e98535";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

@@ -75,6 +75,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     {
         currentInstallation[@"User"] = [PFUser currentUser];
     }
+   
     [currentInstallation setDeviceTokenFromData:deviceToken];
     [currentInstallation saveInBackground];
 }

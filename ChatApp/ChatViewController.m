@@ -60,6 +60,16 @@
     [self.chatTextField resignFirstResponder];
 
 }
+
+-(void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID{
+    NSDictionary *dict = @{@"data": data,
+                           @"peerID": peerID
+                           };
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MCDidReceiveDataNotification"
+                                                        object:nil
+                                                      userInfo:dict];
+}
 -(void)sendmyMessages{
     NSData *dataSend = [self.chatTextField.text dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *allConnected = self.appDelegate.mcManager.session.connectedPeers;
@@ -73,15 +83,7 @@
     [self.chatTextField resignFirstResponder];
 
 }
--(void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID{
-    NSDictionary *dict = @{@"data": data,
-                           @"peerID": peerID
-                           };
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MCDidReceiveDataNotification"
-                                                        object:nil
-                                                      userInfo:dict];
-}
 -(void)didReceiveDataWithNotification:(NSNotification *)notification{
     MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
     NSString *peerDisplayName = peerID.displayName;
@@ -91,6 +93,9 @@
 
     [self.chatWindowTextView performSelectorOnMainThread:@selector(setText:) withObject:[self.chatWindowTextView.text stringByAppendingString:[NSString stringWithFormat:@"%@ said:\n%@\n\n", peerDisplayName, receivedText]] waitUntilDone:NO];
 }
+
+
+
 
 
 #pragma keyboard showed

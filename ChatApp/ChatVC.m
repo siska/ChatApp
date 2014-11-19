@@ -118,9 +118,11 @@
             textView.text = nil;
             [textView.undoManager removeAllActions];
             [self queryConversationsMessagesFromParse];
+            [PushNotifcations sendPushWhenMessageRecieved];
         }
     }];
 }
+
 
 #pragma mark - JSQMessages CollectionView DataSource
 
