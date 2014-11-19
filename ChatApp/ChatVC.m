@@ -106,6 +106,8 @@
             id ip = [NSIndexPath indexPathForItem:self.messages.count - 1 inSection:0];
             [self.collectionView insertItemsAtIndexPaths:@[ip]];
             [self scrollToBottomAnimated:YES];
+
+            [self sendPushNotificationTo:self.selectedUser message:conversation.text];
         }
     }];
 }
@@ -252,6 +254,16 @@
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapCellAtIndexPath:(NSIndexPath *)indexPath touchLocation:(CGPoint)touchLocation
 {
     NSLog(@"didTapCellAtIndexPath %@", NSStringFromCGPoint(touchLocation));
+}
+
+- (void)sendPushNotificationTo:(PFUser *)recipient message:(id)message {
+    PFQuery *query = [PFInstallation query];
+    [query whereKey:@"user" equalTo:recipient];
+    [PFPush sendPushMessageToQueryInBackground:query withMessage:message block:^(BOOL succeeded, NSError *error) {
+        if (!succeeded) {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 @end

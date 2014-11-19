@@ -17,8 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *disconnectButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewConnectedDevices;
 
-- (IBAction)browseDevicePressed:(id)sender;
-- (IBAction)switchToggleVisibility:(id)sender;
-- (IBAction)disconnectOnButtonPressed:(id)sender;
+
 
 @end
