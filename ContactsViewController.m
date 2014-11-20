@@ -18,6 +18,8 @@
 @property NSArray *allUsers;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property PFUser *selectedUser;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *multipeerButton;
+
 
 @end
 
@@ -25,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.multipeerButton.title = @"";
     self.contacts = [[NSArray alloc] init];
     self.contactsSeparated = [[NSMutableDictionary alloc] init];
     self.contactSectionTitles = [NSArray array];
