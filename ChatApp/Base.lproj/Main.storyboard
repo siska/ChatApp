@@ -137,11 +137,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="hW5-mX-7S3">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Multipeer" id="F0u-ew-rwN" userLabel=" ">
-                            <connections>
-                                <segue destination="eIb-l5-WoU" kind="show" id="TLL-uZ-Bmm"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="rsR-z9-CIP">
                             <connections>
                                 <segue destination="mr3-fn-xnq" kind="unwind" unwindAction="unwindFromLogOut:" id="r3y-a1-whW"/>
@@ -149,7 +144,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="multipeerButton" destination="F0u-ew-rwN" id="h2r-HI-6dd"/>
                         <outlet property="tableView" destination="DBP-5A-riS" id="dgd-CC-eiP"/>
                         <segue destination="YxD-ui-tW1" kind="show" identifier="FullConversationSegue" id="ivu-M6-dI5"/>
                     </connections>
